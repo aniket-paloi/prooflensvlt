@@ -1,0 +1,194 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Public investigator profile metadata isolated from PII.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the investigator.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "organization": {
+          "type": "string",
+          "description": "Organization or underwriting desk name.",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was last updated."
+        }
+      },
+      "required": ["uid", "displayName", "organization", "createdAt", "updatedAt"]
+    },
+    "UserPrivateInfo": {
+      "title": "UserPrivateInfo",
+      "description": "Strictly isolated PII document for the user (owner-only access).",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Verified email address of the user.",
+          "minLength": 3,
+          "maxLength": 254
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of creation."
+        }
+      },
+      "required": ["uid", "email", "createdAt"]
+    },
+    "DocumentFolder": {
+      "title": "DocumentFolder",
+      "description": "User-created folder for organizing uploaded PDF and image documents.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Folder identifier.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "UID of the user who owns this folder.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Folder display name.",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional summary of folder contents.",
+          "minLength": 0,
+          "maxLength": 240
+        },
+        "color": {
+          "type": "string",
+          "description": "Badge color token.",
+          "enum": ["blue", "emerald", "amber", "violet", "rose", "slate"],
+          "maxLength": 20
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when folder was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when folder was last updated."
+        }
+      },
+      "required": ["id", "ownerId", "name", "description", "color", "createdAt", "updatedAt"]
+    },
+    "VaultDocumentMeta": {
+      "title": "VaultDocumentMeta",
+      "description": "Metadata and folder organization record for an uploaded document.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Document ID matching the ProofLens document record.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "UID of the user who uploaded or organized the document.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "folderId": {
+          "type": "string",
+          "description": "Target folder ID or 'unfiled'.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Sanitized document filename.",
+          "minLength": 1,
+          "maxLength": 180
+        },
+        "docClass": {
+          "type": "string",
+          "description": "Classified document schema.",
+          "enum": ["application", "salary-slip", "bank-statement", "technical-blueprint", "unknown"],
+          "maxLength": 40
+        },
+        "sha256": {
+          "type": "string",
+          "description": "Post-ingestion SHA-256 hex digest.",
+          "minLength": 64,
+          "maxLength": 64,
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when indexed."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when last updated."
+        }
+      },
+      "required": ["id", "ownerId", "folderId", "displayName", "docClass", "sha256", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Public investigator profile document keyed by Firebase Auth UID."
+    },
+    "/users/{userId}/private/{infoId}": {
+      "schema": { "$ref": "#/entities/UserPrivateInfo" },
+      "description": "Isolated PII subcollection storing user email, restricted strictly to owner."
+    },
+    "/folders/{folderId}": {
+      "schema": { "$ref": "#/entities/DocumentFolder" },
+      "description": "User-owned document folders for organizing uploaded PDFs."
+    },
+    "/vaultDocuments/{documentId}": {
+      "schema": { "$ref": "#/entities/VaultDocumentMeta" },
+      "description": "User-owned document organization metadata linking documents to folders."
+    }
+  }
+}

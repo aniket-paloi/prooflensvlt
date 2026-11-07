@@ -1,0 +1,184 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Pillar 1: Global Safety Net (Default-Deny Catch-All)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global Hardened Primitives
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Validation Blueprint: UserProfile (/users/{userId})
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['uid', 'displayName', 'organization', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['uid', 'displayName', 'organization', 'createdAt', 'updatedAt'])
+        && data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.uid == request.auth.uid
+        && data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 100
+        && data.organization is string && data.organization.size() >= 1 && data.organization.size() <= 120
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    // Validation Blueprint: UserPrivateInfo (/users/{userId}/private/{infoId})
+    function isValidUserPrivateInfo(data) {
+      return data.keys().hasAll(['uid', 'email', 'createdAt'])
+        && data.keys().hasOnly(['uid', 'email', 'createdAt'])
+        && data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.uid == request.auth.uid
+        && data.email is string && data.email.size() >= 3 && data.email.size() <= 254
+        && data.createdAt is timestamp;
+    }
+
+    // Validation Blueprint: DocumentFolder (/folders/{folderId})
+    function isValidDocumentFolder(data) {
+      return data.keys().hasAll(['id', 'ownerId', 'name', 'description', 'color', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['id', 'ownerId', 'name', 'description', 'color', 'createdAt', 'updatedAt'])
+        && data.id is string && data.id.size() >= 1 && data.id.size() <= 128 && data.id.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerId == request.auth.uid
+        && data.name is string && data.name.size() >= 1 && data.name.size() <= 80
+        && data.description is string && data.description.size() <= 240
+        && data.color is string && data.color.size() <= 20
+        && data.color in ['blue', 'emerald', 'amber', 'violet', 'rose', 'slate']
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    // Validation Blueprint: VaultDocumentMeta (/vaultDocuments/{documentId})
+    function isValidVaultDocumentMeta(data) {
+      return data.keys().hasAll(['id', 'ownerId', 'folderId', 'displayName', 'docClass', 'sha256', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['id', 'ownerId', 'folderId', 'displayName', 'docClass', 'sha256', 'createdAt', 'updatedAt'])
+        && data.id is string && data.id.size() >= 1 && data.id.size() <= 128 && data.id.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.ownerId == request.auth.uid
+        && data.folderId is string && data.folderId.size() >= 1 && data.folderId.size() <= 128 && data.folderId.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 180
+        && data.docClass is string && data.docClass.size() <= 40
+        && data.docClass in ['application', 'salary-slip', 'bank-statement', 'technical-blueprint', 'unknown']
+        && data.sha256 is string && data.sha256.size() == 64 && data.sha256.matches('^[a-f0-9]{64}$')
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    // 1. User Profiles Collection
+    match /users/{userId} {
+      allow get: if isSignedIn() && isValidId(userId) && request.auth.uid == userId;
+      allow list: if false;
+      allow create: if isVerifiedUser()
+        && isValidId(userId)
+        && request.auth.uid == userId
+        && isValidUserProfile(incoming())
+        && incoming().uid == userId
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+      allow update: if isVerifiedUser()
+        && isValidId(userId)
+        && isValidUserProfile(incoming())
+        && request.auth.uid == userId
+        && existing().uid == request.auth.uid
+        && incoming().uid == existing().uid
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'organization', 'updatedAt']);
+      allow delete: if false;
+
+      // 2. Isolated User PII Subcollection (Master Gate checks parent /users/{userId})
+      match /private/{infoId} {
+        allow get: if isSignedIn()
+          && isValidId(userId)
+          && isValidId(infoId)
+          && request.auth.uid == userId
+          && get(/databases/$(database)/documents/users/$(userId)).data.uid == request.auth.uid;
+        allow list: if false;
+        allow create: if isVerifiedUser()
+          && isValidId(userId)
+          && isValidId(infoId)
+          && infoId == 'info'
+          && request.auth.uid == userId
+          && isValidUserPrivateInfo(incoming())
+          && incoming().createdAt == request.time
+          && exists(/databases/$(database)/documents/users/$(userId))
+          && get(/databases/$(database)/documents/users/$(userId)).data.uid == request.auth.uid;
+        allow update: if isVerifiedUser()
+          && isValidId(userId)
+          && isValidId(infoId)
+          && isValidUserPrivateInfo(incoming())
+          && request.auth.uid == userId
+          && existing().uid == request.auth.uid
+          && incoming().uid == existing().uid
+          && incoming().createdAt == existing().createdAt
+          && incoming().diff(existing()).affectedKeys().hasOnly(['email'])
+          && get(/databases/$(database)/documents/users/$(userId)).data.uid == request.auth.uid;
+        allow delete: if false;
+      }
+    }
+
+    // 3. Document Folders Collection
+    match /folders/{folderId} {
+      allow get: if isSignedIn() && isValidId(folderId) && existing().ownerId == request.auth.uid;
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isVerifiedUser()
+        && isValidId(folderId)
+        && isValidDocumentFolder(incoming())
+        && incoming().id == folderId
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+      allow update: if isVerifiedUser()
+        && isValidId(folderId)
+        && isValidDocumentFolder(incoming())
+        && existing().ownerId == request.auth.uid
+        && incoming().id == existing().id
+        && incoming().ownerId == existing().ownerId
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && incoming().diff(existing()).affectedKeys().hasOnly(['name', 'description', 'color', 'updatedAt']);
+      allow delete: if isVerifiedUser() && isValidId(folderId) && existing().ownerId == request.auth.uid;
+    }
+
+    // 4. Vault Document Organization Metadata Collection
+    match /vaultDocuments/{documentId} {
+      allow get: if isSignedIn() && isValidId(documentId) && existing().ownerId == request.auth.uid;
+      allow list: if isSignedIn() && resource.data.ownerId == request.auth.uid;
+      allow create: if isVerifiedUser()
+        && isValidId(documentId)
+        && isValidVaultDocumentMeta(incoming())
+        && incoming().id == documentId
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time
+        && (incoming().folderId == 'unfiled' || (exists(/databases/$(database)/documents/folders/$(incoming().folderId)) && get(/databases/$(database)/documents/folders/$(incoming().folderId)).data.ownerId == request.auth.uid));
+      allow update: if isVerifiedUser()
+        && isValidId(documentId)
+        && isValidVaultDocumentMeta(incoming())
+        && existing().ownerId == request.auth.uid
+        && incoming().id == existing().id
+        && incoming().ownerId == existing().ownerId
+        && incoming().sha256 == existing().sha256
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && incoming().diff(existing()).affectedKeys().hasOnly(['folderId', 'displayName', 'updatedAt'])
+        && (incoming().folderId == 'unfiled' || (exists(/databases/$(database)/documents/folders/$(incoming().folderId)) && get(/databases/$(database)/documents/folders/$(incoming().folderId)).data.ownerId == request.auth.uid));
+      allow delete: if isVerifiedUser() && isValidId(documentId) && existing().ownerId == request.auth.uid;
+    }
+  }
+}
