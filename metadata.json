@@ -1,6 +1,6 @@
 {
   "name": "ProofLens — Evidence-Driven Document Investigation",
-  "description": "Reviewer-controlled document analysis, data extraction, cross-document financial reconciliation, visual forensic inspection, and traceable dossier workspace.",
+  "description": "Evidence-first financial document investigation workspace combining deterministic Indian Rupee (₹) ledger reconciliation, coordinate-mapped visual forensics, and cryptographic audit trails.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
