@@ -9,6 +9,8 @@ import type { FindingDisposition } from './src/types/prooflens.ts';
 import {
   recordGoogleDocsExport,
   getGoogleDocsExportsForCase,
+  syncInvestigationCasesToSql,
+  syncFoldersToSql,
   syncVaultDocumentsToSql,
 } from './src/db/queries.ts';
 
@@ -24,13 +26,19 @@ async function startServer() {
   const store = new ProofLensStore(__dirname);
   const initPromise = store.initialize(__dirname);
 
-  // Sync loaded vault documents to Cloud SQL asynchronously in background
+  // Sync loaded cases, folders, and vault documents to Cloud SQL asynchronously in background
   initPromise
-    .then(() => {
-      const allDocs = store.listAllVaultDocuments();
-      syncVaultDocumentsToSql(allDocs).catch((err) => {
-        console.warn('Initial Cloud SQL document sync skipped/logged:', err.message);
-      });
+    .then(async () => {
+      try {
+        const cases = store.listCases();
+        await syncInvestigationCasesToSql(cases);
+        const folders = store.listFolders();
+        await syncFoldersToSql(folders);
+        const allDocs = store.listAllVaultDocuments();
+        await syncVaultDocumentsToSql(allDocs);
+      } catch (err) {
+        console.warn('Initial Cloud SQL sync skipped/logged:', (err as Error).message);
+      }
     })
     .catch(() => {});
 

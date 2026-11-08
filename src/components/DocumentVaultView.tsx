@@ -501,7 +501,7 @@ export function DocumentVaultView({
             type="button"
             disabled={uploading}
             onClick={() => fileInputRef.current?.click()}
-            className="px-4 py-2 rounded-md bg-blue-700 text-white text-xs font-medium hover:bg-blue-800 disabled:opacity-50 inline-flex items-center gap-1.5 cursor-pointer"
+            className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-semibold shadow-xs disabled:opacity-50 inline-flex items-center gap-1.5 cursor-pointer ring-1 ring-blue-500/20 transition-all"
           >
             <FilePlus2 className="w-3.5 h-3.5" />
             <span>
@@ -512,19 +512,19 @@ export function DocumentVaultView({
           <button
             type="button"
             onClick={handleOpenGoogleDocs}
-            className="px-3.5 py-2 rounded-md border border-[#4285F4]/30 bg-blue-50/70 hover:bg-blue-100 text-xs font-semibold text-[#1a73e8] inline-flex items-center gap-1.5 cursor-pointer shadow-2xs"
+            className="px-3.5 py-2 rounded-lg border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-xs font-semibold text-blue-700 inline-flex items-center gap-1.5 cursor-pointer shadow-2xs transition-colors"
             title="Browse and import Google Docs from Google Drive"
           >
-            <ExternalLink className="w-3.5 h-3.5 text-[#1a73e8]" />
+            <ExternalLink className="w-3.5 h-3.5 text-blue-600" />
             <span>Google Docs &amp; Drive</span>
           </button>
 
           <button
             type="button"
             onClick={() => setCreatingFolder((v) => !v)}
-            className="px-3.5 py-2 rounded-md border border-slate-300 bg-white hover:bg-slate-50 text-xs font-medium text-slate-800 inline-flex items-center gap-1.5 cursor-pointer"
+            className="px-3.5 py-2 rounded-lg border border-violet-200 bg-violet-50/80 hover:bg-violet-100 text-xs font-semibold text-violet-800 inline-flex items-center gap-1.5 cursor-pointer shadow-2xs transition-colors"
           >
-            <FolderPlus className="w-3.5 h-3.5 text-blue-700" />
+            <FolderPlus className="w-3.5 h-3.5 text-violet-600" />
             <span>New Folder</span>
           </button>
         </div>
@@ -579,14 +579,14 @@ export function DocumentVaultView({
             <button
               type="button"
               onClick={() => handleSelectByClass('salary-slip')}
-              className="px-2.5 py-1 rounded border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] cursor-pointer"
+              className="px-2.5 py-1 rounded-md border border-emerald-500/40 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 text-[11px] font-medium cursor-pointer transition-colors"
             >
               + Salary Slips
             </button>
             <button
               type="button"
               onClick={() => handleSelectByClass('bank-statement')}
-              className="px-2.5 py-1 rounded border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] cursor-pointer"
+              className="px-2.5 py-1 rounded-md border border-sky-500/40 bg-sky-950/80 hover:bg-sky-900 text-sky-300 text-[11px] font-medium cursor-pointer transition-colors"
             >
               + Bank Statements
             </button>
@@ -595,7 +595,7 @@ export function DocumentVaultView({
               <button
                 type="button"
                 onClick={() => setSelectedDocIds([])}
-                className="px-2.5 py-1 rounded border border-slate-700 bg-slate-800/60 hover:bg-slate-800 text-slate-400 hover:text-white text-[11px] cursor-pointer"
+                className="px-2.5 py-1 rounded-md border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] cursor-pointer transition-colors"
               >
                 Clear Selection
               </button>
@@ -673,7 +673,7 @@ export function DocumentVaultView({
               type="button"
               disabled={selectedDocIds.length === 0 || bulkProcessing}
               onClick={handleBulkParallelProcess}
-              className="px-4 py-1.5 rounded bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 disabled:opacity-40 text-white text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer shadow-sm ring-1 ring-blue-400/30 transition-all"
             >
               <Play className="w-3.5 h-3.5 fill-current" />
               <span>
@@ -1195,19 +1195,39 @@ export function DocumentVaultView({
                   Content Type:
                 </span>
                 {[
-                  { id: 'all', label: `All Types (${documents.length})` },
-                  { id: 'application/pdf', label: 'PDFs (application/pdf)' },
-                  { id: 'image', label: 'Images (PNG/JPG)' },
-                  { id: 'gdoc', label: 'Google Docs' },
+                  {
+                    id: 'all',
+                    label: `All Types (${documents.length})`,
+                    activeCls: 'bg-slate-900 text-white shadow-xs',
+                    inactiveCls: 'bg-slate-100 text-slate-700 hover:bg-slate-200',
+                  },
+                  {
+                    id: 'application/pdf',
+                    label: 'PDFs (application/pdf)',
+                    activeCls: 'bg-rose-600 text-white shadow-xs',
+                    inactiveCls: 'bg-rose-50 text-rose-700 border border-rose-200/80 hover:bg-rose-100',
+                  },
+                  {
+                    id: 'image',
+                    label: 'Images (PNG/JPG)',
+                    activeCls: 'bg-violet-600 text-white shadow-xs',
+                    inactiveCls: 'bg-violet-50 text-violet-700 border border-violet-200/80 hover:bg-violet-100',
+                  },
+                  {
+                    id: 'gdoc',
+                    label: 'Google Docs',
+                    activeCls: 'bg-blue-600 text-white shadow-xs',
+                    inactiveCls: 'bg-blue-50 text-blue-700 border border-blue-200/80 hover:bg-blue-100',
+                  },
                 ].map((ct) => (
                   <button
                     key={ct.id}
                     type="button"
                     onClick={() => setContentTypeFilter(ct.id)}
-                    className={`px-2.5 py-1 rounded-full text-[11px] font-medium transition-colors cursor-pointer ${
+                    className={`px-3 py-1 rounded-full text-[11px] font-semibold transition-all cursor-pointer ${
                       contentTypeFilter === ct.id
-                        ? 'bg-black text-white shadow-2xs'
-                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                        ? ct.activeCls
+                        : ct.inactiveCls
                     }`}
                   >
                     {ct.label}

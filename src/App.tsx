@@ -405,126 +405,164 @@ export default function App() {
 
   const centerPanePct = Math.max(32, 100 - leftPanePct - rightPanePct);
 
+  // The application header bar is available ONLY after login is done successfully and outside the landing/login pages
+  const showAppHeader = Boolean(
+    authSession && topView !== 'landing' && topView !== 'login'
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
-      {/* Top Navigation Bar — Filko Minimalist High-End Nav */}
-      <header className="bg-white border-b border-slate-200/80 px-6 h-16 flex items-center justify-between gap-6 shrink-0">
-        {/* Zone 1: Single-Line Brand Wordmark with Geometric Emblem */}
-        <button
-          type="button"
-          onClick={() => setTopView('landing')}
-          className="flex items-center gap-2.5 cursor-pointer group text-left shrink-0"
-        >
-          <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center p-1 shadow-xs group-hover:scale-105 transition-transform overflow-hidden">
-            <img
-              src="/assets/aistudio/image_d1982cd2.png"
-              alt="ProofLens Logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="font-display font-extrabold text-lg text-slate-900 tracking-tight">
-            prooflens.
-          </span>
-        </button>
-
-        {/* Zone 2: 5 Clean Filko-Styled Navigation Pills */}
-        <nav
-          aria-label="Primary Navigation"
-          className="flex items-center gap-1.5 p-1 rounded-full bg-slate-100/80 border border-slate-200/80 text-xs font-semibold overflow-x-auto"
-        >
-          <button
-            type="button"
-            onClick={() => setTopView('landing')}
-            className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-              topView === 'landing'
-                ? 'bg-black text-white shadow-2xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            }`}
-          >
-            Home
-          </button>
+      {/* Top Navigation Bar — Available ONLY after successful login in workspace views */}
+      {showAppHeader && (
+        <header className="bg-white border-b border-slate-200/80 px-6 h-16 flex items-center justify-between gap-6 shrink-0">
+          {/* Zone 1: Single-Line Brand Wordmark with Geometric Emblem */}
           <button
             type="button"
             onClick={() => setTopView('cases')}
-            className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-              topView === 'cases'
-                ? 'bg-black text-white shadow-2xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            }`}
+            className="flex items-center gap-2.5 cursor-pointer group text-left shrink-0"
           >
-            Dashboard
+            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center p-1 shadow-xs group-hover:scale-105 transition-transform overflow-hidden">
+              <img
+                src="/assets/aistudio/image_d1982cd2.png"
+                alt="ProofLens Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <span className="font-display font-extrabold text-lg text-slate-900 tracking-tight">
+              prooflens.
+            </span>
           </button>
-          <button
-            type="button"
-            onClick={() => setTopView('vault')}
-            className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-              topView === 'vault'
-                ? 'bg-black text-white shadow-2xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            }`}
-          >
-            Document Vault
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              if (selectedCaseId) {
-                setTopView('investigation');
-              } else if (cases[0]) {
-                openCaseInvestigation(cases[0].id);
-              }
-            }}
-            className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-              topView === 'investigation'
-                ? 'bg-black text-white shadow-2xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            }`}
-          >
-            Investigation Workspace
-          </button>
-          <button
-            type="button"
-            onClick={() => setTopView('login')}
-            className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
-              topView === 'login'
-                ? 'bg-black text-white shadow-2xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-            }`}
-          >
-            {authSession ? authSession.user.displayName : 'Sign In'}
-          </button>
-        </nav>
 
-        {/* Zone 3: Primary Action Button */}
-        <div className="shrink-0 flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={() => setUploadModalOpen(true)}
-            className="px-4 py-2 rounded-full bg-black hover:bg-slate-800 text-white text-xs font-semibold shadow-xs transition-colors inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer"
+          {/* Zone 2: 4 Workspace Navigation Pills with Contextual Color Identifiers */}
+          <nav
+            aria-label="Primary Navigation"
+            className="flex items-center gap-1.5 p-1 rounded-full bg-slate-100/90 border border-slate-200/90 text-xs font-semibold overflow-x-auto"
           >
-            <FilePlus2 className="w-3.5 h-3.5" />
-            <span>+ Upload PDF</span>
-          </button>
-        </div>
-      </header>
+            <button
+              type="button"
+              onClick={() => setTopView('landing')}
+              className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                topView === 'landing'
+                  ? 'bg-slate-900 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/80'
+              }`}
+            >
+              Home
+            </button>
+            <button
+              type="button"
+              onClick={() => setTopView('cases')}
+              className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                topView === 'cases'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-blue-700 hover:bg-blue-50/60'
+              }`}
+            >
+              Dashboard
+            </button>
+            <button
+              type="button"
+              onClick={() => setTopView('vault')}
+              className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                topView === 'vault'
+                  ? 'bg-violet-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-violet-700 hover:bg-violet-50/60'
+              }`}
+            >
+              Document Vault
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                if (selectedCaseId) {
+                  setTopView('investigation');
+                } else if (cases[0]) {
+                  openCaseInvestigation(cases[0].id);
+                }
+              }}
+              className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
+                topView === 'investigation'
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'text-slate-600 hover:text-emerald-700 hover:bg-emerald-50/60'
+              }`}
+            >
+              Investigation Workspace
+            </button>
+          </nav>
+
+          {/* Zone 3: Authenticated User Pill + Action Button */}
+          <div className="shrink-0 flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setTopView('login')}
+              className="px-3.5 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100/90 border border-emerald-200/90 text-xs font-semibold text-emerald-900 transition-colors inline-flex items-center gap-2 cursor-pointer shadow-2xs"
+              title="View Investigator Profile / Sign Out"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+              <span className="max-w-[130px] truncate">
+                {authSession?.user.displayName || 'Investigator'}
+              </span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setUploadModalOpen(true)}
+              className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-semibold shadow-sm hover:shadow transition-all inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 cursor-pointer ring-1 ring-blue-500/20"
+            >
+              <FilePlus2 className="w-3.5 h-3.5" />
+              <span>+ Upload PDF</span>
+            </button>
+          </div>
+        </header>
+      )}
 
       {/* Main Content Viewport */}
       {topView === 'landing' ? (
         <LandingPageView
           cases={cases}
           session={authSession}
-          onEnterWorkspace={() => setTopView('cases')}
-          onOpenCase={(caseId) => openCaseInvestigation(caseId)}
+          onEnterWorkspace={() => {
+            if (!authSession) {
+              setTopView('login');
+            } else {
+              setTopView('cases');
+            }
+          }}
+          onOpenCase={(caseId) => {
+            if (!authSession) {
+              setTopView('login');
+            } else {
+              openCaseInvestigation(caseId);
+            }
+          }}
           onOpenLoginPage={() => setTopView('login')}
-          onOpenVault={() => setTopView('vault')}
+          onOpenVault={() => {
+            if (!authSession) {
+              setTopView('login');
+            } else {
+              setTopView('vault');
+            }
+          }}
           onOpenCapabilities={() => setCapabilitiesOpen(true)}
-          onOpenUpload={() => setUploadModalOpen(true)}
+          onOpenUpload={() => {
+            if (!authSession) {
+              setTopView('login');
+            } else {
+              setUploadModalOpen(true);
+            }
+          }}
         />
-      ) : topView === 'login' ? (
+      ) : topView === 'login' || !authSession ? (
         <LoginPageView
           session={authSession}
-          onSessionChange={(newSess) => setAuthSession(newSess)}
+          onSessionChange={(newSess) => {
+            setAuthSession(newSess);
+            if (newSess) {
+              setTopView('cases');
+            }
+          }}
           onContinueToWorkspace={() => setTopView('cases')}
+          onBackToLanding={() => setTopView('landing')}
         />
       ) : topView === 'vault' ? (
         <DocumentVaultView

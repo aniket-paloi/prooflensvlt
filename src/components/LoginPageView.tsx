@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {
+  ArrowLeft,
   ArrowRight,
   CheckCircle2,
   Eye,
@@ -34,6 +35,7 @@ interface LoginPageViewProps {
   session: AuthSessionPayload | null;
   onSessionChange: (newSession: AuthSessionPayload | null) => void;
   onContinueToWorkspace: () => void;
+  onBackToLanding?: () => void;
 }
 
 type AuthTab = 'login' | 'register' | 'session';
@@ -83,6 +85,7 @@ export function LoginPageView({
   session,
   onSessionChange,
   onContinueToWorkspace,
+  onBackToLanding,
 }: LoginPageViewProps) {
   const [tab, setTab] = useState<AuthTab>(session ? 'session' : 'login');
   const [email, setEmail] = useState<string>('aniket03a@gmail.com');
@@ -682,16 +685,32 @@ export function LoginPageView({
           </div>
         )}
 
-        {/* Back to Home Link */}
-        <div className="pt-6 mt-6 border-t border-slate-200/80">
-          <button
-            type="button"
-            onClick={onContinueToWorkspace}
-            className="text-xs text-slate-600 hover:text-slate-900 font-medium inline-flex items-center gap-1 cursor-pointer"
-          >
-            <span>Return to Workspace</span>
-            <ArrowRight className="w-3 h-3" />
-          </button>
+        {/* Navigation & Return Links */}
+        <div className="pt-6 mt-6 border-t border-slate-200/80 flex items-center justify-between">
+          {onBackToLanding && (
+            <button
+              type="button"
+              onClick={onBackToLanding}
+              className="text-xs text-slate-600 hover:text-slate-900 font-medium inline-flex items-center gap-1 cursor-pointer"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to Home</span>
+            </button>
+          )}
+          {session ? (
+            <button
+              type="button"
+              onClick={onContinueToWorkspace}
+              className="text-xs font-semibold text-slate-900 hover:text-black inline-flex items-center gap-1 cursor-pointer ml-auto"
+            >
+              <span>Go to Workspace</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          ) : (
+            <span className="text-[11px] text-slate-400 ml-auto">
+              Sovereign Evidence Companion
+            </span>
+          )}
         </div>
       </div>
     </div>

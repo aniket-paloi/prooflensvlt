@@ -255,9 +255,9 @@ export function DossierReportView({
                   ? 'Disabled: run has no valid parsed documents to snapshot.'
                   : 'Freeze a new 6-section dossier snapshot from the current run & field revisions'
               }
-              className="px-3.5 py-2 rounded border border-slate-300 bg-white text-slate-800 text-xs font-medium hover:bg-slate-50 disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="px-3.5 py-2 rounded-lg border border-indigo-200 bg-indigo-50/80 text-indigo-900 text-xs font-semibold hover:bg-indigo-100 disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-2xs transition-colors"
             >
-              <FilePlus2 className="w-3.5 h-3.5 text-blue-700" />
+              <FilePlus2 className="w-3.5 h-3.5 text-indigo-700" />
               <span>
                 {generating ? 'Freezing Snapshot...' : 'Generate Frozen Dossier'}
               </span>
@@ -267,7 +267,7 @@ export function DossierReportView({
               type="button"
               disabled={!canGenerate || exportingFormat !== null}
               onClick={() => handleExportDossier('pdf')}
-              className="px-3.5 py-2 rounded bg-blue-700 text-white text-xs font-semibold hover:bg-blue-800 disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="px-3.5 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-semibold shadow-xs disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap ring-1 ring-blue-500/20 transition-all"
             >
               <Download className="w-3.5 h-3.5" />
               <span>
@@ -281,7 +281,7 @@ export function DossierReportView({
               type="button"
               disabled={!canGenerate || exportingFormat !== null}
               onClick={() => handleExportDossier('json')}
-              className="px-3.5 py-2 rounded bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
+              className="px-3.5 py-2 rounded-lg bg-slate-900 text-white text-xs font-semibold hover:bg-black disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap border border-slate-700/80 shadow-xs transition-colors"
             >
               <FileJson className="w-3.5 h-3.5 text-blue-300" />
               <span>
@@ -295,7 +295,7 @@ export function DossierReportView({
               type="button"
               disabled={!canGenerate || exportingFormat !== null}
               onClick={handleExportGoogleDoc}
-              className="px-3.5 py-2 rounded bg-[#0F9D58] hover:bg-[#0b8043] text-white text-xs font-semibold disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-xs"
+              className="px-3.5 py-2 rounded-lg bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-xs font-semibold disabled:opacity-40 inline-flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-xs ring-1 ring-emerald-500/20 transition-all"
               title="Export dossier report as an official Google Doc"
             >
               <ExternalLink className="w-3.5 h-3.5 text-white" />

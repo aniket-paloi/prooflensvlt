@@ -38,14 +38,12 @@ export const investigationCases = pgTable('investigation_cases', {
 // Vault Documents table for document management & real-time search
 export const vaultDocuments = pgTable('vault_documents', {
   id: text('id').primaryKey(),
-  caseId: text('case_id')
-    .references(() => investigationCases.id)
-    .notNull(),
+  caseId: text('case_id'),
   originalFilename: text('original_filename').notNull(),
   displayName: text('display_name').notNull(),
   contentType: text('content_type').notNull().default('application/pdf'),
   docClass: text('doc_class').notNull(),
-  folderId: text('folder_id').references(() => vaultFolders.id),
+  folderId: text('folder_id'),
   fileSize: integer('file_size').default(0),
   sha256: text('sha256').notNull(),
   classificationReason: text('classification_reason'),
@@ -55,9 +53,7 @@ export const vaultDocuments = pgTable('vault_documents', {
 // Cryptographic Audit Events table
 export const auditEvents = pgTable('audit_events', {
   id: text('id').primaryKey(),
-  caseId: text('case_id')
-    .references(() => investigationCases.id)
-    .notNull(),
+  caseId: text('case_id').notNull(),
   eventType: text('event_type').notNull(),
   actor: text('actor').notNull(),
   prevHash: text('prev_hash'),
@@ -70,9 +66,7 @@ export const auditEvents = pgTable('audit_events', {
 // Google Docs Dossier Export Registry table
 export const googleDocsExports = pgTable('google_docs_exports', {
   id: text('id').primaryKey(),
-  caseId: text('case_id')
-    .references(() => investigationCases.id)
-    .notNull(),
+  caseId: text('case_id').notNull(),
   docId: text('doc_id').notNull(),
   docTitle: text('doc_title').notNull(),
   docUrl: text('doc_url').notNull(),

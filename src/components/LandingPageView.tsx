@@ -72,7 +72,7 @@ export function LandingPageView({
           <button
             type="button"
             onClick={onEnterWorkspace}
-            className="px-5 py-2.5 rounded-full bg-black hover:bg-slate-800 text-white transition-colors cursor-pointer shadow-xs inline-flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all cursor-pointer shadow-xs inline-flex items-center gap-1.5 font-semibold ring-1 ring-blue-500/20"
           >
             <span>Launch Workspace</span>
           </button>
@@ -82,7 +82,7 @@ export function LandingPageView({
       {/* 2. Hero Section (Matching Image 2 Pixel-by-Pixel) */}
       <main className="flex-1 flex flex-col items-center justify-center px-6 pt-10 pb-16 max-w-5xl mx-auto text-center space-y-7">
         {/* Sovereign Document Investigation Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-slate-200 bg-slate-50/70 text-[11px] font-semibold tracking-wider text-slate-700 uppercase shadow-2xs">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-200 bg-emerald-50/70 text-[11px] font-semibold tracking-wider text-emerald-800 uppercase shadow-2xs">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>SOVEREIGN DOCUMENT INVESTIGATION</span>
         </div>
@@ -104,16 +104,16 @@ export function LandingPageView({
           <button
             type="button"
             onClick={onEnterWorkspace}
-            className="px-6 py-3.5 rounded-full bg-black hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-all inline-flex items-center gap-2 cursor-pointer shadow-sm hover:gap-2.5"
+            className="px-6 py-3.5 rounded-full bg-slate-900 hover:bg-black text-white text-xs sm:text-sm font-semibold transition-all inline-flex items-center gap-2 cursor-pointer shadow-md hover:shadow-lg hover:gap-2.5 ring-1 ring-slate-800"
           >
             <span>Open Reviewer Workspace</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 text-blue-400" />
           </button>
 
           <button
             type="button"
             onClick={onOpenLoginPage}
-            className="px-6 py-3.5 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-900 text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-2xs"
+            className="px-6 py-3.5 rounded-full border border-blue-200 bg-blue-50/80 hover:bg-blue-100 text-blue-900 text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-2xs"
           >
             <span>Sign In with Reviewer ID</span>
           </button>

@@ -87,11 +87,87 @@ export async function getGoogleDocsExportsForCase(caseId: string) {
   }
 }
 
+// Sync investigation cases to Cloud SQL
+export async function syncInvestigationCasesToSql(
+  cases: Array<{
+    id: string;
+    referenceCode: string;
+    title: string;
+    applicantName: string;
+    summary?: string;
+    scenarioTag?: string;
+    documentCount?: number;
+  }>
+) {
+  try {
+    for (const c of cases) {
+      await db
+        .insert(investigationCases)
+        .values({
+          id: c.id,
+          referenceCode: c.referenceCode,
+          title: c.title,
+          applicantName: c.applicantName,
+          summary: c.summary || null,
+          scenarioTag: c.scenarioTag || null,
+          status: 'under-review',
+          documentCount: c.documentCount || 0,
+        })
+        .onConflictDoUpdate({
+          target: investigationCases.id,
+          set: {
+            title: c.title,
+            applicantName: c.applicantName,
+            summary: c.summary || null,
+            scenarioTag: c.scenarioTag || null,
+            documentCount: c.documentCount || 0,
+            updatedAt: new Date(),
+          },
+        });
+    }
+  } catch (error) {
+    console.warn('Cloud SQL syncInvestigationCasesToSql warning:', error);
+  }
+}
+
+// Sync folders to Cloud SQL
+export async function syncFoldersToSql(
+  folders: Array<{
+    id: string;
+    name: string;
+    description?: string;
+    color?: string;
+  }>
+) {
+  try {
+    for (const f of folders) {
+      await db
+        .insert(vaultFolders)
+        .values({
+          id: f.id,
+          name: f.name,
+          description: f.description || null,
+          color: f.color || 'blue',
+        })
+        .onConflictDoUpdate({
+          target: vaultFolders.id,
+          set: {
+            name: f.name,
+            description: f.description || null,
+            color: f.color || 'blue',
+          },
+        });
+    }
+  } catch (error) {
+    console.warn('Cloud SQL syncFoldersToSql warning:', error);
+  }
+}
+
 // Sync documents to Cloud SQL
 export async function syncVaultDocumentsToSql(
   docs: Array<{
     id: string;
-    caseId: string;
+    caseId?: string;
     originalFilename?: string;
     displayName: string;
     contentType?: string;
@@ -108,7 +184,7 @@ export async function syncVaultDocumentsToSql(
         .insert(vaultDocuments)
         .values({
           id: d.id,
-          caseId: d.caseId,
+          caseId: d.caseId || null,
           originalFilename: d.originalFilename || d.displayName,
           displayName: d.displayName,
           contentType: d.contentType || 'application/pdf',
@@ -121,6 +197,7 @@ export async function syncVaultDocumentsToSql(
         .onConflictDoUpdate({
           target: vaultDocuments.id,
           set: {
+            caseId: d.caseId || null,
             displayName: d.displayName,
             contentType: d.contentType || 'application/pdf',
             docClass: d.docClass,
@@ -130,7 +207,6 @@ export async function syncVaultDocumentsToSql(
         });
     }
   } catch (error) {
-    console.error('Cloud SQL syncVaultDocumentsToSql failed:', error);
-    // Non-fatal logging to preserve application continuity
+    console.warn('Cloud SQL syncVaultDocumentsToSql warning:', error);
   }
 }
