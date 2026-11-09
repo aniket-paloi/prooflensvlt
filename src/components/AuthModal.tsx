@@ -87,11 +87,11 @@ export function AuthModal({
   onSessionChange,
 }: AuthModalProps) {
   const [tab, setTab] = useState<AuthTab>(session ? 'session' : 'login');
-  const [email, setEmail] = useState<string>('aniket03a@gmail.com');
+  const [email, setEmail] = useState<string>('demo@prooflens.local');
   const [password, setPassword] = useState<string>('Investigator#2026');
   const [displayName, setDisplayName] = useState<string>('');
   const [organization, setOrganization] = useState<string>(
-    'ProofLens India Financial Forensics'
+    'ProofLens Demo Workspace'
   );
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
@@ -320,7 +320,7 @@ export function AuthModal({
             onClick={() => {
               setTab('register');
               setError('');
-              if (email === 'aniket03a@gmail.com') {
+              if (email === 'demo@prooflens.local') {
                 setEmail('');
                 setPassword('');
               }
@@ -419,15 +419,14 @@ export function AuthModal({
               <div className="p-2.5 rounded bg-slate-50 border border-slate-200 flex items-center justify-between gap-2 text-[11px] text-slate-600">
                 <div>
                   <span className="font-semibold text-slate-800">
-                    Seeded Investigator:
+                    Demo Reviewer:
                   </span>{' '}
-                  <span className="font-mono">aniket03a@gmail.com</span> /{' '}
-                  <span className="font-mono">Investigator#2026</span>
+                  <span className="font-mono">demo@prooflens.local</span>
                 </div>
                 <button
                   type="button"
                   onClick={() => {
-                    setEmail('aniket03a@gmail.com');
+                    setEmail('demo@prooflens.local');
                     setPassword('Investigator#2026');
                   }}
                   className="px-2 py-1 rounded border border-slate-300 bg-white hover:bg-slate-100 text-[11px] font-medium text-slate-800 cursor-pointer shrink-0"

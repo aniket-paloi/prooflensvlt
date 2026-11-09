@@ -142,14 +142,29 @@ async function startServer() {
     res.json({ status: 'logged-out' });
   });
 
+  // Session enforcement middleware for original document PDFs, reports, and mutations
+  const requireSession = (req: Request, res: Response, next: NextFunction) => {
+    const rawToken =
+      req.headers.authorization ||
+      (typeof req.query.token === 'string' ? req.query.token : undefined);
+    const session = store.getSession(rawToken);
+    if (!session) {
+      res.status(401).json({
+        error: 'Authentication required. Please sign in to access this resource.',
+      });
+      return;
+    }
+    next();
+  };
+
   // ============================================================================
   // Document Vault, Folders & Keyword Search Endpoints
   // ============================================================================
-  app.get('/api/folders', (_req: Request, res: Response) => {
+  app.get('/api/folders', requireSession, (_req: Request, res: Response) => {
     res.json({ folders: store.listFolders() });
   });
 
-  app.post('/api/folders', (req: Request, res: Response) => {
+  app.post('/api/folders', requireSession, (req: Request, res: Response) => {
     try {
       const { name, description, color, ownerId } = req.body || {};
       const folder = store.createFolder({
@@ -165,7 +180,7 @@ async function startServer() {
     }
   });
 
-  app.delete('/api/folders/:folderId', (req: Request, res: Response) => {
+  app.delete('/api/folders/:folderId', requireSession, (req: Request, res: Response) => {
     try {
       store.deleteFolder(req.params.folderId);
       res.json({ folders: store.listFolders() });
@@ -175,7 +190,7 @@ async function startServer() {
     }
   });
 
-  app.get('/api/documents', (req: Request, res: Response) => {
+  app.get('/api/documents', requireSession, (req: Request, res: Response) => {
     const folderId =
       typeof req.query.folderId === 'string' ? req.query.folderId : undefined;
     const search =
@@ -186,7 +201,7 @@ async function startServer() {
     res.json({ documents, folders: store.listFolders() });
   });
 
-  app.patch('/api/documents/:documentId/folder', (req: Request, res: Response) => {
+  app.patch('/api/documents/:documentId/folder', requireSession, (req: Request, res: Response) => {
     try {
       const { folderId } = req.body || {};
       if (typeof folderId !== 'string' || !folderId.trim()) {
@@ -204,7 +219,7 @@ async function startServer() {
     }
   });
 
-  app.post('/api/documents/bulk-move', (req: Request, res: Response) => {
+  app.post('/api/documents/bulk-move', requireSession, (req: Request, res: Response) => {
     try {
       const { documentIds, folderId } = req.body || {};
       if (!Array.isArray(documentIds) || documentIds.length === 0) {
@@ -227,7 +242,7 @@ async function startServer() {
     }
   });
 
-  app.post('/api/documents/bulk-process', async (req: Request, res: Response) => {
+  app.post('/api/documents/bulk-process', requireSession, async (req: Request, res: Response) => {
     try {
       const { documentIds, mode, consolidatedTitle, actor } = req.body || {};
       if (!Array.isArray(documentIds) || documentIds.length === 0) {
@@ -261,6 +276,7 @@ async function startServer() {
 
   app.post(
     '/api/documents/upload',
+    requireSession,
     upload.array('files', 12),
     async (req: Request, res: Response) => {
       try {
@@ -323,7 +339,7 @@ async function startServer() {
     res.json({ cases: store.listCases() });
   });
 
-  app.post('/api/cases', (req: Request, res: Response) => {
+  app.post('/api/cases', requireSession, (req: Request, res: Response) => {
     const { title, applicantName, referenceCode, scenarioTag, summary } =
       req.body || {};
     if (!title || typeof title !== 'string' || !title.trim()) {
@@ -363,6 +379,7 @@ async function startServer() {
 
   app.post(
     '/api/cases/:caseId/documents',
+    requireSession,
     upload.array('files', 12),
     async (req: Request, res: Response) => {
       try {
@@ -400,23 +417,28 @@ async function startServer() {
   );
 
   // Authorized case-scoped document byte stream for PDF.js & Image viewer (never arbitrary filesystem paths)
-  app.get('/api/documents/:documentId/file', (req: Request, res: Response) => {
-    const resolved = store.getOriginalFilePath(req.params.documentId);
-    if (!resolved) {
-      res.status(404).json({ error: 'Document original bytes not found.' });
-      return;
+  app.get(
+    '/api/documents/:documentId/file',
+    requireSession,
+    (req: Request, res: Response) => {
+      const resolved = store.getOriginalFilePath(req.params.documentId);
+      if (!resolved) {
+        res.status(404).json({ error: 'Document original bytes not found.' });
+        return;
+      }
+      res.setHeader('Content-Type', resolved.doc.mimeType);
+      res.setHeader('X-Content-Type-Options', 'nosniff');
+      res.setHeader(
+        'Content-Disposition',
+        `inline; filename="${resolved.doc.displayName.replace(/"/g, '')}"`
+      );
+      res.sendFile(resolved.path);
     }
-    res.setHeader('Content-Type', resolved.doc.mimeType);
-    res.setHeader('X-Content-Type-Options', 'nosniff');
-    res.setHeader(
-      'Content-Disposition',
-      `inline; filename="${resolved.doc.displayName.replace(/"/g, '')}"`
-    );
-    res.sendFile(resolved.path);
-  });
+  );
 
   app.get(
     '/api/documents/:documentId/pages/:pageNumber',
+    requireSession,
     (req: Request, res: Response) => {
       const pageNumber = Number(req.params.pageNumber);
       if (!Number.isInteger(pageNumber) || pageNumber < 1) {
@@ -433,16 +455,20 @@ async function startServer() {
   );
 
   // Processing Runs
-  app.post('/api/cases/:caseId/runs', async (req: Request, res: Response) => {
-    try {
-      const run = await store.executeProcessingRun(req.params.caseId);
-      const details = store.getRunDetails(run.id);
-      res.status(201).json({ run, runDetails: details });
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Processing run failed.';
-      res.status(400).json({ error: msg });
+  app.post(
+    '/api/cases/:caseId/runs',
+    requireSession,
+    async (req: Request, res: Response) => {
+      try {
+        const run = await store.executeProcessingRun(req.params.caseId);
+        const details = store.getRunDetails(run.id);
+        res.status(201).json({ run, runDetails: details });
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Processing run failed.';
+        res.status(400).json({ error: msg });
+      }
     }
-  });
+  );
 
   app.get('/api/runs/:runId', (req: Request, res: Response) => {
     const details = store.getRunDetails(req.params.runId);
@@ -476,71 +502,82 @@ async function startServer() {
   });
 
   // Field Corrections & Dependency Propagation
-  app.post('/api/fields/:fieldId/revisions', (req: Request, res: Response) => {
-    try {
-      const { expectedRevision, newValue, actor, reason } = req.body || {};
-      if (typeof expectedRevision !== 'number') {
-        res.status(400).json({ error: 'Numeric expectedRevision is required.' });
-        return;
+  app.post(
+    '/api/fields/:fieldId/revisions',
+    requireSession,
+    (req: Request, res: Response) => {
+      try {
+        const { expectedRevision, newValue, actor, reason } = req.body || {};
+        if (typeof expectedRevision !== 'number') {
+          res.status(400).json({ error: 'Numeric expectedRevision is required.' });
+          return;
+        }
+        if (typeof newValue !== 'string' || !newValue.trim()) {
+          res.status(400).json({ error: 'Non-empty newValue is required.' });
+          return;
+        }
+        if (typeof reason !== 'string' || !reason.trim()) {
+          res.status(400).json({ error: 'Reviewer reason is required.' });
+          return;
+        }
+        const updatedRun = store.correctFieldWithPropagation({
+          fieldId: req.params.fieldId,
+          expectedRevision,
+          newValue,
+          actor:
+            typeof actor === 'string' && actor.trim() ? actor : 'reviewer-local',
+          reason,
+        });
+        res.json({ runDetails: updatedRun });
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Revision update failed.';
+        const status = msg.includes('conflict') ? 409 : 400;
+        res.status(status).json({ error: msg });
       }
-      if (typeof newValue !== 'string' || !newValue.trim()) {
-        res.status(400).json({ error: 'Non-empty newValue is required.' });
-        return;
-      }
-      if (typeof reason !== 'string' || !reason.trim()) {
-        res.status(400).json({ error: 'Reviewer reason is required.' });
-        return;
-      }
-      const updatedRun = store.correctFieldWithPropagation({
-        fieldId: req.params.fieldId,
-        expectedRevision,
-        newValue,
-        actor: typeof actor === 'string' && actor.trim() ? actor : 'reviewer-local',
-        reason,
-      });
-      res.json({ runDetails: updatedRun });
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Revision update failed.';
-      const status = msg.includes('conflict') ? 409 : 400;
-      res.status(status).json({ error: msg });
     }
-  });
+  );
 
   // Finding Dispositions
-  app.post('/api/findings/:findingId/reviews', (req: Request, res: Response) => {
-    try {
-      const { disposition, actor, reason } = req.body || {};
-      const validDispositions: FindingDisposition[] = [
-        'open',
-        'observation-confirmed',
-        'further-verification-needed',
-        'false-alert',
-        'resolved',
-      ];
-      if (!validDispositions.includes(disposition)) {
-        res.status(400).json({ error: 'Invalid finding disposition.' });
-        return;
+  app.post(
+    '/api/findings/:findingId/reviews',
+    requireSession,
+    (req: Request, res: Response) => {
+      try {
+        const { disposition, actor, reason } = req.body || {};
+        const validDispositions: FindingDisposition[] = [
+          'open',
+          'observation-confirmed',
+          'further-verification-needed',
+          'false-alert',
+          'resolved',
+        ];
+        if (!validDispositions.includes(disposition)) {
+          res.status(400).json({ error: 'Invalid finding disposition.' });
+          return;
+        }
+        if (typeof reason !== 'string' || !reason.trim()) {
+          res.status(400).json({ error: 'Disposition reason is required.' });
+          return;
+        }
+        const updated = store.reviewFindingDisposition({
+          findingId: req.params.findingId,
+          disposition,
+          actor:
+            typeof actor === 'string' && actor.trim() ? actor : 'reviewer-local',
+          reason,
+        });
+        res.json({ finding: updated });
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Review update failed.';
+        res.status(400).json({ error: msg });
       }
-      if (typeof reason !== 'string' || !reason.trim()) {
-        res.status(400).json({ error: 'Disposition reason is required.' });
-        return;
-      }
-      const updated = store.reviewFindingDisposition({
-        findingId: req.params.findingId,
-        disposition,
-        actor: typeof actor === 'string' && actor.trim() ? actor : 'reviewer-local',
-        reason,
-      });
-      res.json({ finding: updated });
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Review update failed.';
-      res.status(400).json({ error: msg });
     }
-  });
+  );
 
   // Bounded 7-Tool Investigation Agent + Gemini 3.8 Flash Synthesis
   app.post(
     '/api/findings/:findingId/investigate',
+    requireSession,
     async (req: Request, res: Response) => {
       try {
         const actor =
@@ -556,17 +593,21 @@ async function startServer() {
   );
 
   // Evidence-Grounded Case Q&A (Gemini 3.8 Flash + Prompt-Injection Guard)
-  app.post('/api/runs/:runId/questions', async (req: Request, res: Response) => {
-    try {
-      const question =
-        typeof req.body?.question === 'string' ? req.body.question : '';
-      const response = await store.askRunQuestion(req.params.runId, question);
-      res.json(response);
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Question failed.';
-      res.status(400).json({ error: msg });
+  app.post(
+    '/api/runs/:runId/questions',
+    requireSession,
+    async (req: Request, res: Response) => {
+      try {
+        const question =
+          typeof req.body?.question === 'string' ? req.body.question : '';
+        const response = await store.askRunQuestion(req.params.runId, question);
+        res.json(response);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Question failed.';
+        res.status(400).json({ error: msg });
+      }
     }
-  });
+  );
 
   // Forensic Capability Probe (MobileNetV3 Crop Classifier, Pixel ELA Heatmap, Indian KYC/IFSC Verifier, Signature/Indic OCR)
   app.get('/api/runs/:runId/forensic-probe', (req: Request, res: Response) => {
@@ -585,6 +626,7 @@ async function startServer() {
   // AI Executive Case Analysis (Gemini 3.8 Flash)
   app.post(
     '/api/runs/:runId/ai-analyze',
+    requireSession,
     async (req: Request, res: Response) => {
       try {
         const analysis = await store.generateAIExecutiveAnalysis(
@@ -600,30 +642,39 @@ async function startServer() {
   );
 
   // Frozen Dossier Snapshots
-  app.post('/api/runs/:runId/reports', (req: Request, res: Response) => {
-    try {
-      const actor =
-        typeof req.body?.actor === 'string' ? req.body.actor : 'reviewer-local';
-      const report = store.generateReport(req.params.runId, actor);
-      res.status(201).json({ report });
-    } catch (err) {
-      const msg =
-        err instanceof Error ? err.message : 'Report generation failed.';
-      res.status(400).json({ error: msg });
+  app.post(
+    '/api/runs/:runId/reports',
+    requireSession,
+    (req: Request, res: Response) => {
+      try {
+        const actor =
+          typeof req.body?.actor === 'string' ? req.body.actor : 'reviewer-local';
+        const report = store.generateReport(req.params.runId, actor);
+        res.status(201).json({ report });
+      } catch (err) {
+        const msg =
+          err instanceof Error ? err.message : 'Report generation failed.';
+        res.status(400).json({ error: msg });
+      }
     }
-  });
+  );
 
-  app.get('/api/reports/:reportId', (req: Request, res: Response) => {
-    const report = store.getReport(req.params.reportId);
-    if (!report) {
-      res.status(404).json({ error: 'Report artifact not found.' });
-      return;
+  app.get(
+    '/api/reports/:reportId',
+    requireSession,
+    (req: Request, res: Response) => {
+      const report = store.getReport(req.params.reportId);
+      if (!report) {
+        res.status(404).json({ error: 'Report artifact not found.' });
+        return;
+      }
+      res.json({ report });
     }
-    res.json({ report });
-  });
+  );
 
   app.post(
     '/api/runs/:runId/dossier-export',
+    requireSession,
     (req: Request, res: Response) => {
       try {
         const {
@@ -651,7 +702,7 @@ async function startServer() {
   );
 
   // Google Docs Exports & Cloud SQL Registry
-  app.get('/api/cases/:caseId/google-docs-exports', async (req: Request, res: Response) => {
+  app.get('/api/cases/:caseId/google-docs-exports', requireSession, async (req: Request, res: Response) => {
     try {
       const exportsList = await getGoogleDocsExportsForCase(req.params.caseId);
       res.json({ exports: exportsList });
@@ -661,7 +712,7 @@ async function startServer() {
     }
   });
 
-  app.post('/api/cases/:caseId/google-docs-exports', async (req: Request, res: Response) => {
+  app.post('/api/cases/:caseId/google-docs-exports', requireSession, async (req: Request, res: Response) => {
     try {
       const { docId, docTitle, docUrl, createdBy } = req.body || {};
       if (!docId || !docUrl) {
@@ -698,6 +749,7 @@ async function startServer() {
 
   app.post(
     '/api/cases/:caseId/audit/checkpoint',
+    requireSession,
     (req: Request, res: Response) => {
       const c = store.getCase(req.params.caseId);
       if (!c) {
@@ -712,6 +764,7 @@ async function startServer() {
 
   app.post(
     '/api/cases/:caseId/audit/simulate-tamper',
+    requireSession,
     (req: Request, res: Response) => {
       const c = store.getCase(req.params.caseId);
       if (!c) {

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import * as pdfjsLib from 'pdfjs-dist';
 import { ArrowRight, ExternalLink, X } from 'lucide-react';
+import { getStoredSessionToken } from '../api/client';
 import type {
   DocumentRecord,
   FindingRecord,
@@ -28,8 +29,10 @@ function SourceCropPreview({
     async function renderCrop() {
       if (!document) return;
       try {
+        const token = getStoredSessionToken();
         loadingTask = pdfjsLib.getDocument({
           url: `/api/documents/${encodeURIComponent(document.id)}/file`,
+          httpHeaders: token ? { Authorization: `Bearer ${token}` } : undefined,
         });
         pdfInst = await loadingTask.promise;
         if (cancelled) return;

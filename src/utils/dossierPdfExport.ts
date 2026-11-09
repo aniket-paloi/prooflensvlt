@@ -4,7 +4,7 @@ import type {
   ReportArtifact,
 } from '../types/prooflens';
 
-export function downloadDossierBundleAsPdf(bundle: DossierExportBundle): void {
+export function buildDossierPdfDocument(bundle: DossierExportBundle): jsPDF {
   const report = bundle.reportSnapshot;
   const caseTitle = bundle.caseMetadata.caseTitle;
   const doc = new jsPDF({ unit: 'pt', format: 'letter' });
@@ -286,6 +286,13 @@ export function downloadDossierBundleAsPdf(bundle: DossierExportBundle): void {
     }
   }
 
+  return doc;
+}
+
+export function downloadDossierBundleAsPdf(bundle: DossierExportBundle): void {
+  const report = bundle.reportSnapshot;
+  const caseTitle = bundle.caseMetadata.caseTitle;
+  const doc = buildDossierPdfDocument(bundle);
   const safeSlug = caseTitle
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '_')

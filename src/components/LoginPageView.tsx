@@ -88,13 +88,13 @@ export function LoginPageView({
   onBackToLanding,
 }: LoginPageViewProps) {
   const [tab, setTab] = useState<AuthTab>(session ? 'session' : 'login');
-  const [email, setEmail] = useState<string>('aniket03a@gmail.com');
+  const [email, setEmail] = useState<string>('demo@prooflens.local');
   const [password, setPassword] = useState<string>('Investigator#2026');
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [rememberMe, setRememberMe] = useState<boolean>(true);
-  const [displayName, setDisplayName] = useState<string>('Aniket Paloi');
+  const [displayName, setDisplayName] = useState<string>('Demo Reviewer');
   const [organization, setOrganization] = useState<string>(
-    'ProofLens India Financial Forensics'
+    'ProofLens Demo Workspace'
   );
   const [submitting, setSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
@@ -510,12 +510,12 @@ export function LoginPageView({
                 <button
                   type="button"
                   onClick={() => {
-                    setEmail('aniket03a@gmail.com');
+                    setEmail('demo@prooflens.local');
                     setPassword('Investigator#2026');
                   }}
                   className="px-3 py-1 rounded-full border border-slate-300/80 bg-white/60 hover:bg-white text-[11px] font-mono text-slate-600 cursor-pointer"
                 >
-                  Fill Demo (aniket03a@gmail.com)
+                  Fill Demo
                 </button>
               </div>
             </form>

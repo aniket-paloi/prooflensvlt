@@ -77,45 +77,6 @@ export function UploadCaseModal({
     }
   };
 
-  const handleFreshUploadAttachedBlueprint = async () => {
-    setSubmitting(true);
-    setError('');
-    try {
-      setStatusMessage(
-        'Fetching ProofLens_Complete_Project_Plan_77826322.pdf bytes for fresh pipeline run...'
-      );
-      const resp = await fetch(
-        '/assets/aistudio/ProofLens_Complete_Project_Plan_77826322.pdf'
-      );
-      if (!resp.ok) {
-        throw new Error('Could not fetch attached blueprint PDF asset.');
-      }
-      const blob = await resp.blob();
-      const renamedFile = new File(
-        [blob],
-        `Fresh_Blueprint_Upload_${Date.now().toString(36)}.pdf`,
-        { type: 'application/pdf' }
-      );
-      const { case: created } = await prooflensApi.createCase({
-        title: 'Fresh Upload — ProofLens Specification PDF',
-        applicantName: 'Siddharth Balu Jamdhade',
-        scenarioTag: 'blueprint-spec',
-        summary:
-          'Freshly uploaded copy of ProofLens_Complete_Project_Plan_77826322.pdf processed live through ingestion, 42-page PDF.js extraction, and table geometry parsing.',
-      });
-      await prooflensApi.uploadDocuments(created.id, [renamedFile]);
-      const { runDetails } = await prooflensApi.triggerRun(created.id);
-      const { case: refreshedCase } = await prooflensApi.getCase(created.id);
-      onCaseProcessed(refreshedCase, runDetails);
-      onClose();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to process blueprint PDF.');
-    } finally {
-      setSubmitting(false);
-      setStatusMessage('');
-    }
-  };
-
   const handleTestCorruptUpload = async () => {
     setSubmitting(true);
     setError('');
@@ -267,18 +228,9 @@ export function UploadCaseModal({
           {/* Quick Live Pipeline Verification Actions */}
           <div className="pt-2 border-t border-slate-200 space-y-2">
             <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-              Or Run Live Verification Fixtures Through Full Ingestion Pipeline
+              Or Verify Failure-Mode Handling
             </div>
             <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                disabled={submitting}
-                onClick={handleFreshUploadAttachedBlueprint}
-                className="px-2.5 py-1.5 rounded border border-slate-200 bg-white hover:bg-slate-50 text-xs font-medium text-slate-700 inline-flex items-center gap-1.5 cursor-pointer"
-              >
-                <FileText className="w-3.5 h-3.5 text-blue-700" />
-                <span>Re-Ingest Attached Blueprint PDF (42p)</span>
-              </button>
               <button
                 type="button"
                 disabled={submitting}

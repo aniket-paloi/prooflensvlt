@@ -224,8 +224,6 @@ export class ProofLensStore {
           doc.caseId === 'case-kulkarni-incomplete-provenance'
         ) {
           doc.folderId = 'fld-split-partial';
-        } else if (doc.caseId === 'case-uploaded-blueprint') {
-          doc.folderId = 'fld-specifications';
         } else {
           doc.folderId = 'unfiled';
         }
@@ -233,19 +231,27 @@ export class ProofLensStore {
       }
     }
 
-    // Seed default investigator account if no users exist
-    if (this.db.users.length === 0) {
+    // Ensure non-personal demo reviewer account exists and remove any legacy personal email seed
+    const demoEmail = 'demo@prooflens.local';
+    const hasDemoUser = this.db.users.some(
+      (u) => u.email.toLowerCase() === demoEmail
+    );
+    if (!hasDemoUser) {
       const saltHex = crypto.randomBytes(16).toString('hex');
       const hashHex = crypto
         .pbkdf2Sync('Investigator#2026', saltHex, 100000, 64, 'sha512')
         .toString('hex');
-      this.db.users.push({
-        id: 'usr-lead-investigator',
-        email: 'aniket03a@gmail.com',
-        displayName: 'Aniket (Lead Investigator)',
-        organization: 'ProofLens Financial Forensics Desk',
+      this.db.users = this.db.users.filter(
+        (u) => u.id !== 'usr-lead-investigator'
+      );
+      this.db.users.unshift({
+        id: 'usr-demo-reviewer',
+        email: demoEmail,
+        displayName: 'Demo Reviewer',
+        organization: 'ProofLens Demo Workspace',
         authProvider: 'email-password-pbkdf2',
-        passwordHashAlgo: 'PBKDF2-HMAC-SHA512 (100,000 iterations + 128-bit random salt)',
+        passwordHashAlgo:
+          'PBKDF2-HMAC-SHA512 (100,000 iterations + 128-bit random salt)',
         passwordSaltHex: saltHex,
         passwordHashHex: hashHex,
         createdAt: now,
@@ -256,26 +262,44 @@ export class ProofLensStore {
     return mutated;
   }
 
-  async initialize(workspaceRoot: string): Promise<void> {
+  async initialize(_workspaceRoot: string): Promise<void> {
     if (fs.existsSync(this.dbPath)) {
       try {
         const raw = fs.readFileSync(this.dbPath, 'utf8');
-        this.db = JSON.parse(raw) as PersistedDatabase;
-        if (fs.existsSync(this.checkpointPath)) {
-          this.checkpoints = JSON.parse(
-            fs.readFileSync(this.checkpointPath, 'utf8')
-          ) as Record<string, RetainedCheckpoint>;
+        const parsed = JSON.parse(raw) as PersistedDatabase;
+        // If legacy non-synthetic blueprint case exists in persisted state, re-seed cleanly with synthetic cases only
+        const hasLegacyBlueprint = (parsed.cases || []).some(
+          (c) => c.id === 'case-uploaded-blueprint'
+        );
+        if (!hasLegacyBlueprint && (parsed.cases || []).length > 0) {
+          this.db = parsed;
+          if (fs.existsSync(this.checkpointPath)) {
+            this.checkpoints = JSON.parse(
+              fs.readFileSync(this.checkpointPath, 'utf8')
+            ) as Record<string, RetainedCheckpoint>;
+          }
+          if (this.ensureDefaultFoldersAndUsers()) {
+            this.persist();
+          }
+          return;
         }
-        if (this.ensureDefaultFoldersAndUsers()) {
-          this.persist();
-        }
-        return;
       } catch {
         // Re-seed cleanly if persisted file was unreadable
       }
     }
 
-    // Seed 1..4: Canonical fictional financial investigation packets from real generated PDFs
+    // Clear any stale originals before clean synthetic seed
+    try {
+      for (const f of fs.readdirSync(this.originalsDir)) {
+        if (f.endsWith('.bin')) {
+          fs.unlinkSync(path.join(this.originalsDir, f));
+        }
+      }
+    } catch {
+      // Non-fatal
+    }
+
+    // Seed 1..4: Canonical fictional financial investigation packets from generated PDFs
     const packets = buildCanonicalFictionalPackets();
     for (const pkt of packets) {
       const now = new Date().toISOString();
@@ -321,59 +345,14 @@ export class ProofLensStore {
         this.saveRetainedCheckpoint(c.id, 'system-bootstrap');
       }
 
-      // Pre-generate an initial frozen dossier for Case 1 so Report view has an example immediately
-      if (pkt.caseId === 'case-sharma-consistent') {
+      // Pre-generate initial frozen dossiers for Cases 1, 2, and 3 so Report view has immediate snapshots
+      if (
+        pkt.caseId === 'case-sharma-consistent' ||
+        pkt.caseId === 'case-deshmukh-discrepancy' ||
+        pkt.caseId === 'case-nair-split-payment'
+      ) {
         this.generateReport(run.id, 'system-bootstrap');
       }
-    }
-
-    // Seed 5: Ingest the attached uploaded PDF (ProofLens_Complete_Project_Plan_77826322.pdf) through the exact same pipeline!
-    const attachedPdfPath = path.join(
-      workspaceRoot,
-      'public',
-      'assets',
-      'aistudio',
-      'ProofLens_Complete_Project_Plan_77826322.pdf'
-    );
-    if (fs.existsSync(attachedPdfPath)) {
-      const pdfBuf = fs.readFileSync(attachedPdfPath);
-      const now = new Date().toISOString();
-      const bpCase: CaseRecord = {
-        id: 'case-uploaded-blueprint',
-        title: 'Uploaded PDF Analysis — ProofLens Complete Project Plan',
-        applicantName: 'Siddharth Balu Jamdhade (Specification Owner)',
-        referenceCode: 'DOC-77826322',
-        scenarioTag: 'blueprint-spec',
-        summary:
-          'Direct ingestion and multi-page structural/table extraction of the uploaded 42-page ProofLens_Complete_Project_Plan_77826322.pdf specification.',
-        createdAt: now,
-        updatedAt: now,
-        latestRunId: null,
-        documentCount: 0,
-        findingSummary: {
-          discrepancy: 0,
-          possibleExplanation: 0,
-          insufficientEvidence: 0,
-          consistent: 0,
-        },
-      };
-      this.db.cases.unshift(bpCase);
-      this.appendAudit(bpCase.id, 'CASE_CREATED', 'system-bootstrap', undefined, {
-        title: bpCase.title,
-        sourceFile: 'ProofLens_Complete_Project_Plan_77826322.pdf',
-      });
-
-      await this.ingestDocumentBuffer({
-        caseId: bpCase.id,
-        displayName: 'ProofLens_Complete_Project_Plan_77826322.pdf',
-        mimeType: 'application/pdf',
-        buffer: pdfBuf,
-        actor: 'system-bootstrap',
-      });
-
-      const bpRun = await this.executeProcessingRun(bpCase.id, 'system-bootstrap');
-      this.saveRetainedCheckpoint(bpCase.id, 'system-bootstrap');
-      this.generateReport(bpRun.id, 'system-bootstrap');
     }
 
     this.ensureDefaultFoldersAndUsers();
@@ -419,14 +398,19 @@ export class ProofLensStore {
 
   getHealthReady() {
     const storageWritable = fs.existsSync(this.originalsDir);
+    const hasGeminiKey = Boolean(
+      process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY.trim()
+    );
     return {
       status: storageWritable ? 'ready' : 'degraded',
       storageWritable,
       casesLoaded: this.db.cases.length,
       runsLoaded: this.db.runs.length,
-      pdfEngine: 'pdfjs-dist/legacy-5.x',
-      trainedRegionModel: 'implemented (mobilenetv3-forensic-crop-v1.4)',
-      externalLlmAdapter: 'implemented (gemini-3.8-flash server-side adapter)',
+      pdfEngine: 'pdfjs-dist/legacy',
+      trainedRegionModel: 'rule-derived-crop-scorer (no external ML weights loaded)',
+      externalLlmAdapter: hasGeminiKey
+        ? 'gemini-3.8-flash-configured'
+        : 'deterministic-local-fallback',
       timestamp: new Date().toISOString(),
     };
   }
@@ -464,11 +448,11 @@ export class ProofLensStore {
         {
           id: 'pdf-engine',
           name: 'PDF Parsing & Coordinate Extraction',
-          implementation: 'Mozilla PDF.js (5.x) + Coordinate Geometry Engine',
+          implementation: 'Mozilla PDF.js + Coordinate Geometry Engine',
           version: '5.x',
           status: 'implemented',
           description:
-            'Extracts native text spans, normalized top-left bounding boxes, font matrices, and structured tables.',
+            'Extracts native PDF text spans, normalized top-left bounding boxes, font metadata, and structured tables.',
         },
         {
           id: 'decimal-arithmetic',
@@ -477,7 +461,7 @@ export class ProofLensStore {
           version: '10.x',
           status: 'implemented',
           description:
-            'Reconciles declared salary, gross-minus-deductions net pay, and multi-tranche NEFT/RTGS bank credits.',
+            'Reconciles declared salary, gross-minus-deductions net pay, and single or split bank credits.',
         },
         {
           id: 'native-rendered-baseline',
@@ -486,55 +470,58 @@ export class ProofLensStore {
           version: '1.2',
           status: 'implemented',
           description:
-            'Detects spliced text layers, invisible OCR spans, and horizontal/vertical baseline drift.',
+            'Detects conflicting PDF text layers (3 Tr vs. visible 0 Tr), invisible OCR spans, and baseline or font shifts.',
         },
         {
           id: 'bounded-agent',
-          name: 'Bounded 7-Tool Investigation Agent + Gemini 3.8 Flash',
-          implementation: '5-Step State Machine + Server-Side Gemini 3.8 Flash',
+          name: 'Bounded 7-Tool Investigation Agent + Optional Gemini Synthesis',
+          implementation: '5-Step State Machine + Optional Gemini Adapter',
           version: '2.0',
           status: 'implemented',
           description:
-            'Executes whitelisted forensic tools and generates evidence-grounded AI synthesis with prompt-injection guards.',
+            'Executes whitelisted deterministic checks first and uses optional Gemini synthesis when GEMINI_API_KEY is configured.',
         },
         {
           id: 'mobilenet-region-classifier',
-          name: 'Trained MobileNetV3 Region Classifier',
-          implementation: 'MobileNetV3 Feature-Map Crop Classifier',
+          name: 'Region Crop Scorer (Rule-Derived Heuristic)',
+          implementation: 'Rule-Derived Observation & Layer Scorer',
           version: 'v1.4',
           status: 'implemented',
           description:
-            'Classifies document crops into clean native typography, spliced font patches, OCR overlays, and signature boxes.',
+            'Computes rule-derived anomaly scores from observed PDF text-layer and typography properties (no external neural weights loaded).',
         },
         {
           id: 'pixel-ela-segmentation',
-          name: 'Pixel-Level Tampering Segmentation & ELA Heatmap',
-          implementation: 'Dense 8x8 Block Error Level Analysis (ELA) Mask Engine',
+          name: 'Spatial Block Residual Grid (Deterministic Baseline)',
+          implementation: '8x8 Block Residual Grid',
           version: 'v1.2',
           status: 'implemented',
           description:
-            'Computes spatial quantization residuals and localized pixel-level tampering heatmaps per document page.',
+            'Generates a deterministic 8x8 spatial block grid highlighting pages with text-layer or typography observations.',
         },
         {
           id: 'india-kyc-verifier',
-          name: 'Indian Banking (IFSC / UTR) & KYC Registry Verifier',
-          implementation: 'RBI IFSC + NSDL PAN Checksum + MCA21 CIN Verifier',
+          name: 'Banking & Identifier Format Checks',
+          implementation: 'Format & Pattern Matcher (IFSC / PAN / Narration)',
           version: 'v1.0',
           status: 'implemented',
           description:
-            'Validates RBI IFSC branch codes, 10-character PAN structural checksums, corporate CIN/GSTINs, and NEFT UTRs.',
+            'Checks identifier patterns and statement narrations in the case packet without querying live external government registries.',
         },
         {
           id: 'signature-indic-ocr',
-          name: 'Signature Stroke-Density & Multilingual Indic/English OCR',
-          implementation: 'Bezier Stroke Continuity + Devanagari/Indic & English Inspector',
+          name: 'Unicode Span & Raster Header Inspector',
+          implementation: 'Native PDF Unicode + Binary Image Header Parser',
           version: 'v1.1',
           status: 'implemented',
           description:
-            'Evaluates signature region stroke continuity and extracts English, Devanagari (₹/Hindi), and regional Unicode spans.',
+            'Inspects native PDF text spans and binary PNG/JPEG headers; image-only scans and handwriting require external OCR.',
         },
       ],
-      unsupportedCapabilities: [],
+      unsupportedCapabilities: [
+        'Full Optical Character Recognition (OCR) for image-only scans or handwriting without an embedded PDF text layer.',
+        'Live external bank or government registry verification (checks evaluate internal consistency across submitted documents only).',
+      ],
     };
   }
 

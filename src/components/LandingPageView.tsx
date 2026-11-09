@@ -155,10 +155,10 @@ export function LandingPageView({
               {/* Badges Row */}
               <div className="flex flex-wrap items-center gap-2 pt-2">
                 <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[11px] font-medium">
-                  PyMuPDF + OpenCV
+                  PDF.js + Layer Checks
                 </span>
                 <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[11px] font-medium">
-                  Python Decimal Math
+                  Decimal.js Math
                 </span>
                 <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[11px] font-medium">
                   SHA-256 Audit Chain
@@ -276,13 +276,13 @@ export function LandingPageView({
         </div>
       </main>
 
-      {/* 5. Minimalist Bottom Footer (Matching Image 3) */}
+      {/* 5. Minimalist Bottom Footer */}
       <footer className="w-full max-w-5xl mx-auto px-6 py-8 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500">
         <div>
-          ProofLens Enterprise Investigation Workspace • Version 0.3.0
+          ProofLens VLT Investigation Workspace • Prototype
         </div>
         <div className="font-medium text-slate-600">
-          Prepared for Aniket Paloi • 2026
+          Synthetic Demo Dataset • 2026
         </div>
       </footer>
     </div>

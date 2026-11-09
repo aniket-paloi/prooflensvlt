@@ -1260,8 +1260,8 @@ export function DocumentVaultView({
               '66,300',
               'HDFC',
               'Biocon',
-              'Blueprint',
-              'Siddharth',
+              'Nair',
+              'Deshmukh',
             ].map((kw) => (
               <button
                 key={kw}

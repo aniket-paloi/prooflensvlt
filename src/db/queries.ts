@@ -9,6 +9,10 @@ import {
   googleDocsExports,
 } from './schema.ts';
 
+function isCloudSqlConfigured(): boolean {
+  return Boolean(process.env.SQL_HOST && process.env.SQL_HOST.trim());
+}
+
 // User synchronization helper using upsert
 export async function getOrCreateSqlUser(params: {
   uid: string;
@@ -16,6 +20,7 @@ export async function getOrCreateSqlUser(params: {
   displayName?: string;
   role?: string;
 }) {
+  if (!isCloudSqlConfigured()) return null;
   try {
     const result = await db
       .insert(users)
@@ -52,6 +57,7 @@ export async function recordGoogleDocsExport(params: {
   docUrl: string;
   createdBy: string;
 }) {
+  if (!isCloudSqlConfigured()) return null;
   try {
     const result = await db
       .insert(googleDocsExports)
@@ -75,6 +81,7 @@ export async function recordGoogleDocsExport(params: {
 
 // Fetch Google Docs exports for a case
 export async function getGoogleDocsExportsForCase(caseId: string) {
+  if (!isCloudSqlConfigured()) return [];
   try {
     return await db
       .select()
@@ -99,6 +106,7 @@ export async function syncInvestigationCasesToSql(
     documentCount?: number;
   }>
 ) {
+  if (!isCloudSqlConfigured()) return;
   try {
     for (const c of cases) {
       await db
@@ -139,6 +147,7 @@ export async function syncFoldersToSql(
     color?: string;
   }>
 ) {
+  if (!isCloudSqlConfigured()) return;
   try {
     for (const f of folders) {
       await db
@@ -178,6 +187,7 @@ export async function syncVaultDocumentsToSql(
     classificationReason?: string;
   }>
 ) {
+  if (!isCloudSqlConfigured()) return;
   try {
     for (const d of docs) {
       await db

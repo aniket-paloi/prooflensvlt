@@ -1,0 +1,938 @@
+{
+  "schemaVersion": "prooflens-dossier-export-v2.0",
+  "exportedAt": "2026-11-09T05:53:49.445Z",
+  "exportedBy": "demo@prooflens.local",
+  "exportScope": {
+    "validatedOnly": false,
+    "includeFullAuditChain": true,
+    "includeFieldRevisionHistory": true
+  },
+  "caseMetadata": {
+    "caseId": "case-deshmukh-discrepancy",
+    "caseTitle": "Altered Salary & Native/Rendered Disagreement — Vikram Deshmukh",
+    "applicantName": "Vikram Deshmukh",
+    "referenceCode": "APP-IND-2026-019",
+    "scenarioTag": "discrepancy-visual"
+  },
+  "runMetadata": {
+    "runId": "run-deshmukh-discrepancy-1",
+    "runNumber": 1,
+    "status": "complete",
+    "revisionFingerprint": "2441ba36b8c15003",
+    "startedAt": "2026-11-09T05:53:04.918Z",
+    "completedAt": "2026-11-09T05:53:04.961Z"
+  },
+  "reportSnapshot": {
+    "id": "rep-run-deshmukh-discrepancy-1-mw8uhmfe",
+    "caseId": "case-deshmukh-discrepancy",
+    "runId": "run-deshmukh-discrepancy-1",
+    "revisionFingerprint": "2441ba36b8c15003",
+    "status": "active",
+    "reportHash": "31c40cae1df906ba3ff2681582e4ff91518d5c2adf176991fa6affd88fce776e",
+    "generatedAt": "2026-11-09T05:53:04.969Z",
+    "generatedBy": "system-bootstrap",
+    "sections": {
+      "documentOverview": {
+        "summary": "Case \"Altered Salary & Native/Rendered Disagreement — Vikram Deshmukh\" (Vikram Deshmukh) — Frozen snapshot for Run #1 (run-deshmukh-discrepancy-1), revision fingerprint 2441ba36b8c15003. Contains 3 submitted document(s) across 3 page(s).",
+        "documents": [
+          {
+            "displayName": "Loan_Application_Deshmukh.pdf",
+            "docClass": "application",
+            "sha256": "530e9be739a71413cf8d43f5f855ec31178f34bc17d370d071bf5a862e628fb2",
+            "pageCount": 1,
+            "routing": "native-pdf"
+          },
+          {
+            "displayName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+            "docClass": "salary-slip",
+            "sha256": "2378a9fc76f154a525325dfca72c886b6a1f4872313255407338b4afeb0c253d",
+            "pageCount": 1,
+            "routing": "searchable-scan-ocr"
+          },
+          {
+            "displayName": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf",
+            "docClass": "bank-statement",
+            "sha256": "4343bd0f1af82a8ec2c59344ff830591ba5b9855b14e5bd0b43585c7588b917b",
+            "pageCount": 1,
+            "routing": "native-pdf"
+          }
+        ]
+      },
+      "extractedInformation": {
+        "summary": "Extracted 19 source-linked field(s) with 19 total revision record(s). Original extracted values are preserved alongside reviewer corrections.",
+        "fields": [
+          {
+            "label": "Application Reference",
+            "rawValue": "APP-IND-2026-019",
+            "normalizedValue": "APP-IND-2026-019",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Loan_Application_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Applicant / Account Holder",
+            "rawValue": "Vikram Deshmukh",
+            "normalizedValue": "Vikram Deshmukh",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Loan_Application_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Employer Name",
+            "rawValue": "Bharat Freight Logistics Pvt. Ltd.",
+            "normalizedValue": "Bharat Freight Logistics Pvt. Ltd.",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Loan_Application_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Declared Gross Monthly Income",
+            "rawValue": "INR 1,40,000.00",
+            "normalizedValue": "140000.00",
+            "basis": "gross",
+            "unit": "monthly",
+            "period": "2026-08",
+            "sourceRef": "Loan_Application_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Declared Net Monthly Income",
+            "rawValue": "INR 1,12,000.00",
+            "normalizedValue": "112000.00",
+            "basis": "net",
+            "unit": "monthly",
+            "period": "2026-08",
+            "sourceRef": "Loan_Application_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Pay / Declaration Period",
+            "rawValue": "2026-08 (Monthly)",
+            "normalizedValue": "2026-08",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Loan_Application_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Applicant / Account Holder",
+            "rawValue": "Vikram Deshmukh",
+            "normalizedValue": "Vikram Deshmukh",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Employer Name",
+            "rawValue": "Bharat Freight Logistics Pvt. Ltd.",
+            "normalizedValue": "Bharat Freight Logistics Pvt. Ltd.",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Pay / Declaration Period",
+            "rawValue": "2026-08",
+            "normalizedValue": "2026-08",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Payment Date",
+            "rawValue": "2026-08-31",
+            "normalizedValue": "2026-08-31",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Gross Pay",
+            "rawValue": "INR 85,000.00",
+            "normalizedValue": "85000.00",
+            "basis": "gross",
+            "unit": "monthly",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Total Deductions",
+            "rawValue": "INR 17,000.00",
+            "normalizedValue": "17000.00",
+            "basis": "unknown",
+            "unit": "monthly",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Net Pay",
+            "rawValue": "INR 1,12,000.00",
+            "normalizedValue": "112000.00",
+            "basis": "net",
+            "unit": "monthly",
+            "period": "2026-08",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Statement Page Indicator",
+            "rawValue": "Page 1 of 1",
+            "normalizedValue": "1/1",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "n/a",
+            "sourceRef": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Applicant / Account Holder",
+            "rawValue": "Vikram Deshmukh",
+            "normalizedValue": "Vikram Deshmukh",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08-01 to 2026-08-31",
+            "sourceRef": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Account Number",
+            "rawValue": "HDFC-005520914",
+            "normalizedValue": "HDFC-005520914",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08-01 to 2026-08-31",
+            "sourceRef": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Statement Period",
+            "rawValue": "2026-08-01 to 2026-08-31",
+            "normalizedValue": "2026-08-01 to 2026-08-31",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08-01 to 2026-08-31",
+            "sourceRef": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Opening Balance",
+            "rawValue": "INR 94,500.00",
+            "normalizedValue": "94500.00",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08-01 to 2026-08-31",
+            "sourceRef": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          },
+          {
+            "label": "Closing Balance",
+            "rawValue": "INR 1,31,500.00",
+            "normalizedValue": "131500.00",
+            "basis": "n/a",
+            "unit": "n/a",
+            "period": "2026-08-01 to 2026-08-31",
+            "sourceRef": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1",
+            "revision": 1
+          }
+        ]
+      },
+      "contextualAnalysis": {
+        "summary": "Executed 7 deterministic check(s) using exact base-10 Decimal arithmetic and typed claim alignment (applicant, basis, period, currency, unit).",
+        "calculations": [
+          "[CHK-01 · consistent-within-check] Loan_Application_Deshmukh.pdf -> class=application, status=parsed, pages=1, sha256=530e9be739a7...",
+          "[CHK-01 · consistent-within-check] Salary_Slip_Aug2026_Deshmukh.pdf -> class=salary-slip, status=parsed, pages=1, sha256=2378a9fc76f1...",
+          "[CHK-01 · consistent-within-check] HDFC_Bank_Statement_Aug2026_Deshmukh.pdf -> class=bank-statement, status=parsed, pages=1, sha256=4343bd0f1af8...",
+          "[CHK-02 · discrepancy] Page 1: native span \"INR 68,000.00\" != rendered span \"INR 1,12,000.00\" at bbox (0.34, 0.34)",
+          "[CHK-03 · discrepancy] Salary_Slip_Aug2026_Deshmukh.pdf: Gross ₹85,000.00 - Deductions ₹17,000.00 = Expected Net ₹68,000.00 vs. Stated Net ₹1,12,000.00 (Delta: +₹44,000.00)",
+          "[CHK-04 · consistent-within-check] HDFC_Bank_Statement_Aug2026_Deshmukh.pdf Opening Balance: 94500.00",
+          "[CHK-04 · consistent-within-check]   Row 1 (2026-08-05 debit 21000.00): computed=73500.00, stated=73500.00",
+          "[CHK-04 · consistent-within-check]   Row 2 (2026-08-19 debit 10000.00): computed=63500.00, stated=63500.00",
+          "[CHK-04 · consistent-within-check]   Row 3 (2026-08-31 credit 68000.00): computed=131500.00, stated=131500.00",
+          "[CHK-04 · consistent-within-check] HDFC_Bank_Statement_Aug2026_Deshmukh.pdf Closing Balance: computed=131500.00 vs. stated=131500.00",
+          "[CHK-05 · discrepancy] Typed Claim Alignment (Monthly Net vs. Payslip Net): Declared ₹1,12,000.00 vs. Payslip Net ₹1,12,000.00 (Delta: ₹0.00)",
+          "[CHK-05 · discrepancy] Salary_Slip_Aug2026_Deshmukh.pdf (2026-08): Payslip Net ₹1,12,000.00 vs. Bank Credit ₹68,000.00 on 2026-08-31 (Delta: -₹44,000.00)",
+          "[CHK-06 · possible-explanation] Salary_Slip_Aug2026_Deshmukh.pdf p.1: Font sans-serif (11.5pt), baseline delta 3.1pt on \"INR 1,12,000.00\" (signal=0.92)",
+          "[CHK-07 · consistent-within-check] Loan_Application_Deshmukh.pdf <-> Salary_Slip_Aug2026_Deshmukh.pdf: unknown (Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.)",
+          "[CHK-07 · consistent-within-check] Loan_Application_Deshmukh.pdf <-> HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown (Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.)",
+          "[CHK-07 · consistent-within-check] Salary_Slip_Aug2026_Deshmukh.pdf <-> HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown (Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.)"
+        ],
+        "alternatives": [
+          "[fnd-run-deshmukh-discrepancy-1-natren-obs-nat-ren-doc-102a6796-p1-1] Benign OCR misread on scanned document (ruled-out): Ruled out because both layers are clean vector Type1 fonts with an explicit 3 Tr hidden span overlaid by a shifted bold span. — Uncertainty: Requires bank ledger comparison to confirm true disbursed pay.",
+          "[fnd-run-deshmukh-discrepancy-1-payslip-math-doc-102a6796] OCR or extraction misread on Net Pay field (plausible-needs-verification): If the Net Pay value was misread or overwritten on the PDF layer, correcting the field to the verified value resolves the arithmetic check. — Uncertainty: Check visual and bank records before editing.",
+          "[fnd-run-deshmukh-discrepancy-1-bank-mismatch-doc-102a6796] Delayed or split second tranche outside statement (ruled-out): Bank statement covers full month (2026-08-01 to 2026-08-31) with closing balance reconciled; no second payroll tranche present. — Uncertainty: None within submitted statement period.",
+          "[fnd-run-deshmukh-discrepancy-1-bank-mismatch-doc-102a6796] Stated Net Pay field requires reviewer correction (plausible-needs-verification): If the visible payslip Net Pay figure was altered or mis-extracted, correcting it to the verified value resolves the discrepancy. — Uncertainty: Requires reviewer inspection of source crop.",
+          "[fnd-run-deshmukh-discrepancy-1-vis-obs-vis-drift-doc-102a6796-p1-4] Intentional bold total styling vs. post-export text replacement (plausible-needs-verification): Bold styling on a total line can occur in benign templates, unless accompanied by baseline shift and conflicting hidden text. — Uncertainty: Must be weighed alongside CHK-02 and CHK-05."
+        ],
+        "scopedNegativeEvidence": [
+          "No incomplete-window negative searches recorded in this run."
+        ]
+      },
+      "visualForensicFindings": {
+        "summary": "Recorded 2 visual/text-layer observation(s). Note: Trained MobileNetV3 region classifier is not attached in this runtime; findings reflect deterministic native PDF property checks and raster signal baselines.",
+        "observations": [
+          {
+            "method": "PDF Text-Layer vs. Visible Render Cross-Check (text-layer-diff-v1.2)",
+            "property": "Invisible 3 Tr text span vs. visible rendered glyph stream",
+            "measured": "Native hidden span: \"INR 68,000.00\" vs. Visible rendered text: \"INR 1,12,000.00\"",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 [0.34, 0.34]",
+            "strength": 0.94,
+            "limits": "Neither the hidden PDF text span nor the visible rendered text is automatically ground truth; requires independent cross-document verification."
+          },
+          {
+            "method": "Native Typography & Baseline Consistency Inspector (font-baseline-v1.1)",
+            "property": "Font face, point size, and vertical baseline alignment vs. sibling rows",
+            "measured": "Font sans-serif (11.5pt), baseline delta 3.1pt on \"INR 1,12,000.00\"",
+            "sourceRef": "Salary_Slip_Aug2026_Deshmukh.pdf p.1 [0.34, 0.34]",
+            "strength": 0.92,
+            "limits": "Typography or baseline variation alone is not proof of tampering (e.g. emphasis styling or export quirks); must be evaluated alongside contextual and text-layer checks."
+          }
+        ]
+      },
+      "evidenceTraceability": {
+        "summary": "Traceability index linking 3 provenance assertion(s), 0 bounded agent trace(s), and 0 reviewer action(s).",
+        "provenance": [
+          "Loan_Application_Deshmukh.pdf <-> Salary_Slip_Aug2026_Deshmukh.pdf: unknown — Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.",
+          "Loan_Application_Deshmukh.pdf <-> HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown — Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.",
+          "Salary_Slip_Aug2026_Deshmukh.pdf <-> HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown — Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached."
+        ],
+        "agentTraces": [
+          "No bounded agent follow-up runs executed on this snapshot yet."
+        ],
+        "reviewerDispositions": [
+          "No manual reviewer dispositions or corrections recorded yet."
+        ]
+      },
+      "investigationSummary": {
+        "summary": "Summary of 4 finding(s): 3 discrepancy, 1 possible-explanation, 0 insufficient-evidence, 0 consistent-within-check.",
+        "coverageSummary": "CHK-01: applicable/completed -> consistent-within-check | CHK-02: applicable/completed -> discrepancy | CHK-03: applicable/completed -> discrepancy | CHK-04: applicable/completed -> consistent-within-check | CHK-05: applicable/completed -> discrepancy | CHK-06: applicable/completed -> possible-explanation | CHK-07: applicable/completed -> consistent-within-check",
+        "uninspectedRegions": [
+          "Loan_Application_Deshmukh.pdf p.1 [0.05, 0.94, 0.90, 0.04]: Running page footer margin excluded from financial/claim field extraction",
+          "Salary_Slip_Aug2026_Deshmukh.pdf p.1 [0.05, 0.94, 0.90, 0.04]: Running page footer margin excluded from financial/claim field extraction",
+          "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 [0.05, 0.94, 0.90, 0.04]: Running page footer margin excluded from financial/claim field extraction"
+        ],
+        "limitations": [
+          "ProofLens is an evidence-driven investigation workspace; it does not certify document authenticity, establish legal fraud, or contact external issuers.",
+          "SHA-256 digests validate post-ingestion byte integrity only.",
+          "A green completed check indicates consistency within its stated parameters and submitted pages, never blanket authenticity."
+        ]
+      }
+    }
+  },
+  "validatedFindingsSummary": {
+    "totalFindingsInRun": 4,
+    "exportedFindingsCount": 4,
+    "reviewerValidatedCount": 0,
+    "systemConsistentCount": 0,
+    "discrepancyCount": 3,
+    "possibleExplanationCount": 1,
+    "insufficientEvidenceCount": 0
+  },
+  "validatedFindings": [
+    {
+      "id": "fnd-run-deshmukh-discrepancy-1-natren-obs-nat-ren-doc-102a6796-p1-1",
+      "checkId": "chk-run-deshmukh-discrepancy-1-02",
+      "category": "native-rendered-mismatch",
+      "outcome": "discrepancy",
+      "severity": "red",
+      "title": "Native PDF Text vs. Visible Render Disagreement (Salary_Slip_Aug2026_Deshmukh.pdf)",
+      "summary": "Visible rendered region shows \"INR 1,12,000.00\" while underlying PDF native text stream contains \"INR 68,000.00\".",
+      "uncertainty": "Text-layer disagreement shows two conflicting representations in the same PDF coordinate region; neither branch alone proves which figure reflects actual payroll.",
+      "disposition": "open",
+      "validationState": "open-unreviewed",
+      "alternativeExplanationsCount": 1,
+      "alternativeExplanations": [
+        {
+          "title": "Benign OCR misread on scanned document",
+          "status": "ruled-out",
+          "rationale": "Ruled out because both layers are clean vector Type1 fonts with an explicit 3 Tr hidden span overlaid by a shifted bold span.",
+          "remainingUncertainty": "Requires bank ledger comparison to confirm true disbursed pay."
+        }
+      ],
+      "evidenceRefs": [
+        {
+          "documentId": "doc-102a6796",
+          "documentName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Primary Source Region",
+          "bbox": {
+            "x": 0.34314,
+            "y": 0.33848,
+            "w": 0.13683,
+            "h": 0.01815,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fnd-run-deshmukh-discrepancy-1-payslip-math-doc-102a6796",
+      "checkId": "chk-run-deshmukh-discrepancy-1-03",
+      "category": "gross-deductions-net",
+      "outcome": "discrepancy",
+      "severity": "red",
+      "title": "Payslip Internal Arithmetic Discrepancy (Salary_Slip_Aug2026_Deshmukh.pdf)",
+      "summary": "Stated Net Pay (₹1,12,000.00) differs by +₹44,000.00 from Gross Pay (₹85,000.00) minus Deductions (₹17,000.00) = ₹68,000.00.",
+      "uncertainty": "Arithmetic discrepancy indicates either an altered Net Pay figure, an unitemized allowance/bonus omitted from the payslip table, or an OCR/extraction error.",
+      "disposition": "open",
+      "validationState": "open-unreviewed",
+      "alternativeExplanationsCount": 1,
+      "alternativeExplanations": [
+        {
+          "title": "OCR or extraction misread on Net Pay field",
+          "status": "plausible-needs-verification",
+          "rationale": "If the Net Pay value was misread or overwritten on the PDF layer, correcting the field to the verified value resolves the arithmetic check.",
+          "remainingUncertainty": "Check visual and bank records before editing."
+        }
+      ],
+      "evidenceRefs": [
+        {
+          "documentId": "doc-102a6796",
+          "documentName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Primary Source Region",
+          "bbox": {
+            "x": 0.34314,
+            "y": 0.33848,
+            "w": 0.13683,
+            "h": 0.01815,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        },
+        {
+          "documentId": "doc-102a6796",
+          "documentName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Secondary Compare Region",
+          "bbox": {
+            "x": 0.34314,
+            "y": 0.24899,
+            "w": 0.12745,
+            "h": 0.01578,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fnd-run-deshmukh-discrepancy-1-bank-mismatch-doc-102a6796",
+      "checkId": "chk-run-deshmukh-discrepancy-1-05",
+      "category": "cross-document-salary",
+      "outcome": "discrepancy",
+      "severity": "red",
+      "title": "Payslip Net Pay Disagrees with Bank Payroll Deposit (2026-08)",
+      "summary": "Payslip states Net Pay ₹1,12,000.00, whereas the covering bank statement shows an employer payroll credit of ₹68,000.00 on 2026-08-31 (delta -₹44,000.00).",
+      "uncertainty": "Cross-document discrepancy identifies an unexplained gap between stated payslip net pay and deposited bank credit. Check native text layer and visual observations before concluding.",
+      "disposition": "open",
+      "validationState": "open-unreviewed",
+      "alternativeExplanationsCount": 2,
+      "alternativeExplanations": [
+        {
+          "title": "Delayed or split second tranche outside statement",
+          "status": "ruled-out",
+          "rationale": "Bank statement covers full month (2026-08-01 to 2026-08-31) with closing balance reconciled; no second payroll tranche present.",
+          "remainingUncertainty": "None within submitted statement period."
+        },
+        {
+          "title": "Stated Net Pay field requires reviewer correction",
+          "status": "plausible-needs-verification",
+          "rationale": "If the visible payslip Net Pay figure was altered or mis-extracted, correcting it to the verified value resolves the discrepancy.",
+          "remainingUncertainty": "Requires reviewer inspection of source crop."
+        }
+      ],
+      "evidenceRefs": [
+        {
+          "documentId": "doc-102a6796",
+          "documentName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Primary Source Region",
+          "bbox": {
+            "x": 0.34314,
+            "y": 0.33848,
+            "w": 0.13683,
+            "h": 0.01815,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        },
+        {
+          "documentId": "doc-8f9bec31",
+          "documentName": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Secondary Compare Region",
+          "bbox": {
+            "x": 0.0719,
+            "y": 0.35167,
+            "w": 0.86029,
+            "h": 0.01342,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fnd-run-deshmukh-discrepancy-1-vis-obs-vis-drift-doc-102a6796-p1-4",
+      "checkId": "chk-run-deshmukh-discrepancy-1-06",
+      "category": "visual-region-anomaly",
+      "outcome": "possible-explanation",
+      "severity": "amber",
+      "title": "Visual Typography & Baseline Drift Observed (Salary_Slip_Aug2026_Deshmukh.pdf)",
+      "summary": "Font sans-serif (11.5pt), baseline delta 3.1pt on \"INR 1,12,000.00\". Baseline: Sibling value rows use monospace (10pt) with median baseline delta 0.0pt.",
+      "uncertainty": "Typography or baseline variation alone is not proof of tampering (e.g. emphasis styling or export quirks); must be evaluated alongside contextual and text-layer checks.",
+      "disposition": "open",
+      "validationState": "open-unreviewed",
+      "alternativeExplanationsCount": 1,
+      "alternativeExplanations": [
+        {
+          "title": "Intentional bold total styling vs. post-export text replacement",
+          "status": "plausible-needs-verification",
+          "rationale": "Bold styling on a total line can occur in benign templates, unless accompanied by baseline shift and conflicting hidden text.",
+          "remainingUncertainty": "Must be weighed alongside CHK-02 and CHK-05."
+        }
+      ],
+      "evidenceRefs": [
+        {
+          "documentId": "doc-102a6796",
+          "documentName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Primary Source Region",
+          "bbox": {
+            "x": 0.34314,
+            "y": 0.33848,
+            "w": 0.13683,
+            "h": 0.01815,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        },
+        {
+          "documentId": "doc-102a6796",
+          "documentName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+          "pageNumber": 1,
+          "label": "Secondary Compare Region",
+          "bbox": {
+            "x": 0.34314,
+            "y": 0.18081,
+            "w": 0.06863,
+            "h": 0.01578,
+            "pageWidth": 612,
+            "pageHeight": 792,
+            "rotation": 0,
+            "coordinateSystem": "normalized-top-left-v1"
+          }
+        }
+      ]
+    }
+  ],
+  "auditHistory": {
+    "verificationStatus": "verified-against-checkpoint",
+    "checkedEventsCount": 6,
+    "latestSequence": 6,
+    "latestHeadHash": "5e8f5c165da8208391df823621eb0423e92ff93f2601bc01f3812c4a4432a290",
+    "verifiedAt": "2026-11-09T05:53:49.445Z",
+    "cannotEstablishNote": "Threat-model boundary: Hash-linked audit events and SHA-256 digests verify post-ingestion consistency against a separately retained checkpoint. They do not establish pre-upload authenticity, trusted third-party timestamps, or legal admissibility; a privileged actor controlling both the mutable database and the local checkpoint store could rebuild a local chain.",
+    "checkpoint": {
+      "caseId": "case-deshmukh-discrepancy",
+      "lastSequence": 5,
+      "headHash": "4e0b9af89f5217b9a132a047b0be54a1b99d183894441d68ad5deb39b1beaabb",
+      "algorithmVersion": "SHA256-CANONICAL-V1",
+      "snapshotTime": "2026-11-09T05:53:04.965Z"
+    },
+    "fileIntegrityChecks": [
+      {
+        "documentId": "doc-956bf855",
+        "displayName": "Loan_Application_Deshmukh.pdf",
+        "expectedSha256": "530e9be739a71413cf8d43f5f855ec31178f34bc17d370d071bf5a862e628fb2",
+        "actualSha256": "530e9be739a71413cf8d43f5f855ec31178f34bc17d370d071bf5a862e628fb2",
+        "matches": true
+      },
+      {
+        "documentId": "doc-102a6796",
+        "displayName": "Salary_Slip_Aug2026_Deshmukh.pdf",
+        "expectedSha256": "2378a9fc76f154a525325dfca72c886b6a1f4872313255407338b4afeb0c253d",
+        "actualSha256": "2378a9fc76f154a525325dfca72c886b6a1f4872313255407338b4afeb0c253d",
+        "matches": true
+      },
+      {
+        "documentId": "doc-8f9bec31",
+        "displayName": "HDFC_Bank_Statement_Aug2026_Deshmukh.pdf",
+        "expectedSha256": "4343bd0f1af82a8ec2c59344ff830591ba5b9855b14e5bd0b43585c7588b917b",
+        "actualSha256": "4343bd0f1af82a8ec2c59344ff830591ba5b9855b14e5bd0b43585c7588b917b",
+        "matches": true
+      }
+    ],
+    "discrepancies": [],
+    "events": [
+      {
+        "id": "aud-case-deshmukh-discrepancy-seq1",
+        "caseId": "case-deshmukh-discrepancy",
+        "sequence": 1,
+        "eventType": "CASE_CREATED",
+        "actor": "system-bootstrap",
+        "payloadCanonicalJson": "{\"applicantName\":\"Vikram Deshmukh\",\"referenceCode\":\"APP-IND-2026-019\",\"title\":\"Altered Salary & Native/Rendered Disagreement — Vikram Deshmukh\"}",
+        "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "eventHash": "3ac1283153d1fb7ff14f1d9ea30401d687e51c0bf6d4aba730c9787dc04624a3",
+        "createdAt": "2026-11-09T05:53:04.881Z"
+      },
+      {
+        "id": "aud-case-deshmukh-discrepancy-seq2",
+        "caseId": "case-deshmukh-discrepancy",
+        "sequence": 2,
+        "eventType": "DOCUMENT_INGESTED",
+        "actor": "system-bootstrap",
+        "payloadCanonicalJson": "{\"displayName\":\"Loan_Application_Deshmukh.pdf\",\"docClass\":\"application\",\"documentId\":\"doc-956bf855\",\"sha256\":\"530e9be739a71413cf8d43f5f855ec31178f34bc17d370d071bf5a862e628fb2\",\"status\":\"parsed\"}",
+        "prevHash": "3ac1283153d1fb7ff14f1d9ea30401d687e51c0bf6d4aba730c9787dc04624a3",
+        "eventHash": "fdb540519c211ecd96cd51b8668e632c18e89d6f037d54ddf38aa425d4b94f5f",
+        "createdAt": "2026-11-09T05:53:04.893Z"
+      },
+      {
+        "id": "aud-case-deshmukh-discrepancy-seq3",
+        "caseId": "case-deshmukh-discrepancy",
+        "sequence": 3,
+        "eventType": "DOCUMENT_INGESTED",
+        "actor": "system-bootstrap",
+        "payloadCanonicalJson": "{\"displayName\":\"Salary_Slip_Aug2026_Deshmukh.pdf\",\"docClass\":\"salary-slip\",\"documentId\":\"doc-102a6796\",\"sha256\":\"2378a9fc76f154a525325dfca72c886b6a1f4872313255407338b4afeb0c253d\",\"status\":\"parsed\"}",
+        "prevHash": "fdb540519c211ecd96cd51b8668e632c18e89d6f037d54ddf38aa425d4b94f5f",
+        "eventHash": "8062b3b8ed69b0e528ed7f8e3071d8388cbb375dd5e77002ac203462d0f431c1",
+        "createdAt": "2026-11-09T05:53:04.901Z"
+      },
+      {
+        "id": "aud-case-deshmukh-discrepancy-seq4",
+        "caseId": "case-deshmukh-discrepancy",
+        "sequence": 4,
+        "eventType": "DOCUMENT_INGESTED",
+        "actor": "system-bootstrap",
+        "payloadCanonicalJson": "{\"displayName\":\"HDFC_Bank_Statement_Aug2026_Deshmukh.pdf\",\"docClass\":\"bank-statement\",\"documentId\":\"doc-8f9bec31\",\"sha256\":\"4343bd0f1af82a8ec2c59344ff830591ba5b9855b14e5bd0b43585c7588b917b\",\"status\":\"parsed\"}",
+        "prevHash": "8062b3b8ed69b0e528ed7f8e3071d8388cbb375dd5e77002ac203462d0f431c1",
+        "eventHash": "0a68216125cf403c911b323cacfd1d62b784aa53719cf7cff052337459a4304e",
+        "createdAt": "2026-11-09T05:53:04.915Z"
+      },
+      {
+        "id": "aud-case-deshmukh-discrepancy-seq5",
+        "caseId": "case-deshmukh-discrepancy",
+        "sequence": 5,
+        "eventType": "RUN_COMPLETED",
+        "actor": "system-bootstrap",
+        "runId": "run-deshmukh-discrepancy-1",
+        "payloadCanonicalJson": "{\"findingsCount\":4,\"revisionFingerprint\":\"2441ba36b8c15003\",\"runNumber\":1,\"status\":\"complete\"}",
+        "prevHash": "0a68216125cf403c911b323cacfd1d62b784aa53719cf7cff052337459a4304e",
+        "eventHash": "4e0b9af89f5217b9a132a047b0be54a1b99d183894441d68ad5deb39b1beaabb",
+        "createdAt": "2026-11-09T05:53:04.961Z"
+      },
+      {
+        "id": "aud-case-deshmukh-discrepancy-seq6",
+        "caseId": "case-deshmukh-discrepancy",
+        "sequence": 6,
+        "eventType": "REPORT_GENERATED",
+        "actor": "system-bootstrap",
+        "runId": "run-deshmukh-discrepancy-1",
+        "payloadCanonicalJson": "{\"reportHash\":\"31c40cae1df906ba3ff2681582e4ff91518d5c2adf176991fa6affd88fce776e\",\"reportId\":\"rep-run-deshmukh-discrepancy-1-mw8uhmfe\",\"revisionFingerprint\":\"2441ba36b8c15003\"}",
+        "prevHash": "4e0b9af89f5217b9a132a047b0be54a1b99d183894441d68ad5deb39b1beaabb",
+        "eventHash": "5e8f5c165da8208391df823621eb0423e92ff93f2601bc01f3812c4a4432a290",
+        "createdAt": "2026-11-09T05:53:04.970Z"
+      }
+    ],
+    "reviewerActions": [],
+    "fieldRevisions": [
+      {
+        "id": "rev-fld-doc-956bf855-application_reference-p1-1-1",
+        "fieldId": "fld-doc-956bf855-application_reference-p1-1",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "APP-IND-2026-019",
+        "newValue": "APP-IND-2026-019",
+        "previousNormalizedValue": "APP-IND-2026-019",
+        "newNormalizedValue": "APP-IND-2026-019",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-956bf855-applicant_name-p1-2-1",
+        "fieldId": "fld-doc-956bf855-applicant_name-p1-2",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "Vikram Deshmukh",
+        "newValue": "Vikram Deshmukh",
+        "previousNormalizedValue": "Vikram Deshmukh",
+        "newNormalizedValue": "Vikram Deshmukh",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-956bf855-employer_name-p1-3-1",
+        "fieldId": "fld-doc-956bf855-employer_name-p1-3",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "newValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "previousNormalizedValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "newNormalizedValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-956bf855-declared_gross_income-p1-4-1",
+        "fieldId": "fld-doc-956bf855-declared_gross_income-p1-4",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 1,40,000.00",
+        "newValue": "INR 1,40,000.00",
+        "previousNormalizedValue": "140000.00",
+        "newNormalizedValue": "140000.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-956bf855-declared_net_income-p1-5-1",
+        "fieldId": "fld-doc-956bf855-declared_net_income-p1-5",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 1,12,000.00",
+        "newValue": "INR 1,12,000.00",
+        "previousNormalizedValue": "112000.00",
+        "newNormalizedValue": "112000.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-956bf855-pay_period-p1-6-1",
+        "fieldId": "fld-doc-956bf855-pay_period-p1-6",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "2026-08 (Monthly)",
+        "newValue": "2026-08 (Monthly)",
+        "previousNormalizedValue": "2026-08",
+        "newNormalizedValue": "2026-08",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-applicant_name-p1-1-1",
+        "fieldId": "fld-doc-102a6796-applicant_name-p1-1",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "Vikram Deshmukh",
+        "newValue": "Vikram Deshmukh",
+        "previousNormalizedValue": "Vikram Deshmukh",
+        "newNormalizedValue": "Vikram Deshmukh",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-employer_name-p1-2-1",
+        "fieldId": "fld-doc-102a6796-employer_name-p1-2",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "newValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "previousNormalizedValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "newNormalizedValue": "Bharat Freight Logistics Pvt. Ltd.",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-pay_period-p1-3-1",
+        "fieldId": "fld-doc-102a6796-pay_period-p1-3",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "2026-08",
+        "newValue": "2026-08",
+        "previousNormalizedValue": "2026-08",
+        "newNormalizedValue": "2026-08",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-pay_date-p1-4-1",
+        "fieldId": "fld-doc-102a6796-pay_date-p1-4",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "2026-08-31",
+        "newValue": "2026-08-31",
+        "previousNormalizedValue": "2026-08-31",
+        "newNormalizedValue": "2026-08-31",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-gross_pay-p1-5-1",
+        "fieldId": "fld-doc-102a6796-gross_pay-p1-5",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 85,000.00",
+        "newValue": "INR 85,000.00",
+        "previousNormalizedValue": "85000.00",
+        "newNormalizedValue": "85000.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-deductions-p1-6-1",
+        "fieldId": "fld-doc-102a6796-deductions-p1-6",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 17,000.00",
+        "newValue": "INR 17,000.00",
+        "previousNormalizedValue": "17000.00",
+        "newNormalizedValue": "17000.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-102a6796-net_pay-p1-7-1",
+        "fieldId": "fld-doc-102a6796-net_pay-p1-7",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 1,12,000.00",
+        "newValue": "INR 1,12,000.00",
+        "previousNormalizedValue": "112000.00",
+        "newNormalizedValue": "112000.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-8f9bec31-pageind-p1-1",
+        "fieldId": "fld-doc-8f9bec31-pageind-p1",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "Page 1 of 1",
+        "newValue": "Page 1 of 1",
+        "previousNormalizedValue": "1/1",
+        "newNormalizedValue": "1/1",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-8f9bec31-applicant_name-p1-2-1",
+        "fieldId": "fld-doc-8f9bec31-applicant_name-p1-2",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "Vikram Deshmukh",
+        "newValue": "Vikram Deshmukh",
+        "previousNormalizedValue": "Vikram Deshmukh",
+        "newNormalizedValue": "Vikram Deshmukh",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-8f9bec31-account_number-p1-3-1",
+        "fieldId": "fld-doc-8f9bec31-account_number-p1-3",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "HDFC-005520914",
+        "newValue": "HDFC-005520914",
+        "previousNormalizedValue": "HDFC-005520914",
+        "newNormalizedValue": "HDFC-005520914",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-8f9bec31-statement_period-p1-4-1",
+        "fieldId": "fld-doc-8f9bec31-statement_period-p1-4",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "2026-08-01 to 2026-08-31",
+        "newValue": "2026-08-01 to 2026-08-31",
+        "previousNormalizedValue": "2026-08-01 to 2026-08-31",
+        "newNormalizedValue": "2026-08-01 to 2026-08-31",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-8f9bec31-opening_balance-p1-5-1",
+        "fieldId": "fld-doc-8f9bec31-opening_balance-p1-5",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 94,500.00",
+        "newValue": "INR 94,500.00",
+        "previousNormalizedValue": "94500.00",
+        "newNormalizedValue": "94500.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      },
+      {
+        "id": "rev-fld-doc-8f9bec31-closing_balance-p1-6-1",
+        "fieldId": "fld-doc-8f9bec31-closing_balance-p1-6",
+        "caseId": "case-deshmukh-discrepancy",
+        "revisionNumber": 1,
+        "previousValue": "INR 1,31,500.00",
+        "newValue": "INR 1,31,500.00",
+        "previousNormalizedValue": "131500.00",
+        "newNormalizedValue": "131500.00",
+        "actor": "extractor-pipeline",
+        "reason": "Initial extraction (pdfjs-kv-v2.1)",
+        "createdAt": "2026-11-09T05:53:04.918Z",
+        "isOriginal": true
+      }
+    ]
+  },
+  "bundleDigestSha256": "faf6117199983cdb79edd382dd2fb58d0a19e2fd13f56a8995b4f66e48d96e3f"
+}

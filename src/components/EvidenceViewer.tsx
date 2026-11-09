@@ -11,6 +11,7 @@ import {
   ZoomIn,
   ZoomOut,
 } from 'lucide-react';
+import { getStoredSessionToken } from '../api/client';
 import type {
   DocumentRecord,
   FieldRecord,
@@ -166,8 +167,10 @@ export function EvidenceViewer({
       setRenderStatus('loading');
       setRenderError('');
       try {
+        const token = getStoredSessionToken();
         const loadingTask = pdfjsLib.getDocument({
           url: `/api/documents/${encodeURIComponent(document.id)}/file`,
+          httpHeaders: token ? { Authorization: `Bearer ${token}` } : undefined,
         });
         pdfInstance = await loadingTask.promise;
         if (cancelled) return;
@@ -475,7 +478,11 @@ export function EvidenceViewer({
               <canvas ref={canvasRef} className="block" />
             ) : (
               <img
-                src={`/api/documents/${encodeURIComponent(document.id)}/file`}
+                src={`/api/documents/${encodeURIComponent(document.id)}/file${
+                  getStoredSessionToken()
+                    ? `?token=${encodeURIComponent(getStoredSessionToken()!)}`
+                    : ''
+                }`}
                 alt={document.displayName}
                 className="w-full h-full object-contain block"
               />

@@ -1,0 +1,2243 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 7819
+>>
+stream
+0.200025 w
+0 G
+BT
+/F2 15.5 Tf
+17.8249999999999993 TL
+0.059 0.09 0.165 rg
+48. 740. Td
+(ProofLens — Evidence-Driven Investigation Dossier) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.278 0.333 0.412 rg
+48. 723. Td
+(Case: Altered Salary & Native/Rendered Disagreement — Vikram Deshmukh  |  Subject: Vikram Deshmukh \(APP-IND-2026-019\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.278 0.333 0.412 rg
+48. 710. Td
+(Report ID: rep-run-deshmukh-discrepancy-1-mw8uhmfe  |  Status: ACTIVE  |  Exported: 2026-11-09T05:53:49.445Z by demo@prooflens.local) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.278 0.333 0.412 rg
+48. 697. Td
+(Run: run-deshmukh-discrepancy-1 \(Run #1\)  |  Revision Fingerprint: 2441ba36b8c15003) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.278 0.333 0.412 rg
+48. 685. Td
+(Report SHA-256: 31c40cae1df906ba3ff2681582e4...  |  Bundle SHA-256: faf6117199983cdb79edd382...) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 665. Td
+(1. Document Overview & Ingestion Hashes) Tj
+ET
+0.8 0.84 0.88 RG
+48. 659. m
+564. 659. l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 645. Td
+(Case "Altered Salary & Native/Rendered Disagreement — Vikram Deshmukh" \(Vikram Deshmukh\) — Frozen snapshot for Run) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 632.5 Td
+(#1 \(run-deshmukh-discrepancy-1\), revision fingerprint 2441ba36b8c15003. Contains 3 submitted document\(s\) across 3) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 620. Td
+(page\(s\).) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 603.5 Td
+(• Loan_Application_Deshmukh.pdf [application, 1p, native-pdf] — SHA-256:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 591. Td
+(530e9be739a71413cf8d43f5f855ec31178f34bc17d370d071bf5a862e628fb2) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 578.5 Td
+(• Salary_Slip_Aug2026_Deshmukh.pdf [salary-slip, 1p, searchable-scan-ocr] — SHA-256:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 566. Td
+(2378a9fc76f154a525325dfca72c886b6a1f4872313255407338b4afeb0c253d) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 553.5 Td
+(• HDFC_Bank_Statement_Aug2026_Deshmukh.pdf [bank-statement, 1p, native-pdf] — SHA-256:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 541. Td
+(4343bd0f1af82a8ec2c59344ff830591ba5b9855b14e5bd0b43585c7588b917b) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 518.5 Td
+(2. Extracted Information & Claim Semantics) Tj
+ET
+0.8 0.84 0.88 RG
+48. 512.5 m
+564. 512.5 l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 498.5 Td
+(Extracted 19 source-linked field\(s\) with 19 total revision record\(s\). Original extracted values are preserved alongside reviewer) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 486. Td
+(corrections.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 469.5 Td
+(• Application Reference: Raw="APP-IND-2026-019" | Norm="APP-IND-2026-019" \(n/a/n/a, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 457. Td
+([Loan_Application_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 444.5 Td
+(• Applicant / Account Holder: Raw="Vikram Deshmukh" | Norm="Vikram Deshmukh" \(n/a/n/a, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 432. Td
+([Loan_Application_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 419.5 Td
+(• Employer Name: Raw="Bharat Freight Logistics Pvt. Ltd." | Norm="Bharat Freight Logistics Pvt. Ltd." \(n/a/n/a, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 407. Td
+([Loan_Application_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 394.5 Td
+(• Declared Gross Monthly Income: Raw="INR 1,40,000.00" | Norm="140000.00" \(gross/monthly, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 382. Td
+([Loan_Application_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 369.5 Td
+(• Declared Net Monthly Income: Raw="INR 1,12,000.00" | Norm="112000.00" \(net/monthly, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 357. Td
+([Loan_Application_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 344.5 Td
+(• Pay / Declaration Period: Raw="2026-08 \(Monthly\)" | Norm="2026-08" \(n/a/n/a, 2026-08\) [Loan_Application_Deshmukh.pdf) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 332. Td
+(p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 319.5 Td
+(• Applicant / Account Holder: Raw="Vikram Deshmukh" | Norm="Vikram Deshmukh" \(n/a/n/a, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 307. Td
+([Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 294.5 Td
+(• Employer Name: Raw="Bharat Freight Logistics Pvt. Ltd." | Norm="Bharat Freight Logistics Pvt. Ltd." \(n/a/n/a, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 282. Td
+([Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 269.5 Td
+(• Pay / Declaration Period: Raw="2026-08" | Norm="2026-08" \(n/a/n/a, 2026-08\) [Salary_Slip_Aug2026_Deshmukh.pdf p.1) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 257. Td
+(rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 244.5 Td
+(• Payment Date: Raw="2026-08-31" | Norm="2026-08-31" \(n/a/n/a, 2026-08\) [Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 232. Td
+(• Gross Pay: Raw="INR 85,000.00" | Norm="85000.00" \(gross/monthly, 2026-08\) [Salary_Slip_Aug2026_Deshmukh.pdf p.1) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 219.5 Td
+(rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 207. Td
+(• Total Deductions: Raw="INR 17,000.00" | Norm="17000.00" \(unknown/monthly, 2026-08\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 194.5 Td
+([Salary_Slip_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 182. Td
+(• Net Pay: Raw="INR 1,12,000.00" | Norm="112000.00" \(net/monthly, 2026-08\) [Salary_Slip_Aug2026_Deshmukh.pdf p.1) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 169.5 Td
+(rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 157. Td
+(• Statement Page Indicator: Raw="Page 1 of 1" | Norm="1/1" \(n/a/n/a, n/a\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 144.5 Td
+([HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 132. Td
+(• Applicant / Account Holder: Raw="Vikram Deshmukh" | Norm="Vikram Deshmukh" \(n/a/n/a, 2026-08-01 to 2026-08-31\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 119.5 Td
+([HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 107. Td
+(• Account Number: Raw="HDFC-005520914" | Norm="HDFC-005520914" \(n/a/n/a, 2026-08-01 to 2026-08-31\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 94.5 Td
+([HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 82. Td
+(• Statement Period: Raw="2026-08-01 to 2026-08-31" | Norm="2026-08-01 to 2026-08-31" \(n/a/n/a, 2026-08-01 to) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 69.5 Td
+(2026-08-31\) [HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 8330
+>>
+stream
+0.200025 w
+0.8 0.84 0.88 RG
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 740. Td
+(• Opening Balance: Raw="INR 94,500.00" | Norm="94500.00" \(n/a/n/a, 2026-08-01 to 2026-08-31\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 727.5 Td
+([HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 715. Td
+(• Closing Balance: Raw="INR 1,31,500.00" | Norm="131500.00" \(n/a/n/a, 2026-08-01 to 2026-08-31\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 702.5 Td
+([HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 rev.1]) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 680. Td
+(3. Contextual & Financial Analysis \(Decimal Arithmetic\)) Tj
+ET
+0.8 0.84 0.88 RG
+48. 674. m
+564. 674. l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 660. Td
+(Executed 7 deterministic check\(s\) using exact base-10 Decimal arithmetic and typed claim alignment \(applicant, basis, period,) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 647.5 Td
+(currency, unit\).) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 631. Td
+(• [CHK-01 · consistent-within-check] Loan_Application_Deshmukh.pdf -> class=application, status=parsed,) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 618.5 Td
+(pages=1, sha256=530e9be739a7...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 606. Td
+(• [CHK-01 · consistent-within-check] Salary_Slip_Aug2026_Deshmukh.pdf -> class=salary-slip,) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 593.5 Td
+(status=parsed, pages=1, sha256=2378a9fc76f1...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 581. Td
+(• [CHK-01 · consistent-within-check] HDFC_Bank_Statement_Aug2026_Deshmukh.pdf -> class=bank-statement,) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 568.5 Td
+(status=parsed, pages=1, sha256=4343bd0f1af8...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 556. Td
+(• [CHK-02 · discrepancy] Page 1: native span "INR 68,000.00" != rendered span "INR 1,12,000.00" at bbox) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 543.5 Td
+(\(0.34, 0.34\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 531. Td
+(• [CHK-03 · discrepancy] Salary_Slip_Aug2026_Deshmukh.pdf: Gross INR 85,000.00 - Deductions INR) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 518.5 Td
+(17,000.00 = Expected Net INR 68,000.00 vs. Stated Net INR 1,12,000.00 \(Delta: +INR 44,000.00\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 506. Td
+(• [CHK-04 · consistent-within-check] HDFC_Bank_Statement_Aug2026_Deshmukh.pdf Opening Balance: 94500.00) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 493.5 Td
+(• [CHK-04 · consistent-within-check]   Row 1 \(2026-08-05 debit 21000.00\): computed=73500.00,) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 481. Td
+(stated=73500.00) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 468.5 Td
+(• [CHK-04 · consistent-within-check]   Row 2 \(2026-08-19 debit 10000.00\): computed=63500.00,) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 456. Td
+(stated=63500.00) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 443.5 Td
+(• [CHK-04 · consistent-within-check]   Row 3 \(2026-08-31 credit 68000.00\): computed=131500.00,) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 431. Td
+(stated=131500.00) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 418.5 Td
+(• [CHK-04 · consistent-within-check] HDFC_Bank_Statement_Aug2026_Deshmukh.pdf Closing Balance:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 406. Td
+(computed=131500.00 vs. stated=131500.00) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 393.5 Td
+(• [CHK-05 · discrepancy] Typed Claim Alignment \(Monthly Net vs. Payslip Net\): Declared INR 1,12,000.00) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 381. Td
+(vs. Payslip Net INR 1,12,000.00 \(Delta: INR 0.00\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 368.5 Td
+(• [CHK-05 · discrepancy] Salary_Slip_Aug2026_Deshmukh.pdf \(2026-08\): Payslip Net INR 1,12,000.00 vs.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 356. Td
+(Bank Credit INR 68,000.00 on 2026-08-31 \(Delta: -INR 44,000.00\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 343.5 Td
+(• [CHK-06 · possible-explanation] Salary_Slip_Aug2026_Deshmukh.pdf p.1: Font sans-serif \(11.5pt\),) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 331. Td
+(baseline delta 3.1pt on "INR 1,12,000.00" \(signal=0.92\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 318.5 Td
+(• [CHK-07 · consistent-within-check] Loan_Application_Deshmukh.pdf <->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 306. Td
+(Salary_Slip_Aug2026_Deshmukh.pdf: unknown \(Distinct file SHA-256 hashes and distinct PDF producers; no) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 293.5 Td
+(external acquisition chain record attached.\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 281. Td
+(• [CHK-07 · consistent-within-check] Loan_Application_Deshmukh.pdf <->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 268.5 Td
+(HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown \(Distinct file SHA-256 hashes and distinct PDF) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 256. Td
+(producers; no external acquisition chain record attached.\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 243.5 Td
+(• [CHK-07 · consistent-within-check] Salary_Slip_Aug2026_Deshmukh.pdf <->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 231. Td
+(HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown \(Distinct file SHA-256 hashes and distinct PDF) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 218.5 Td
+(producers; no external acquisition chain record attached.\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 202. Td
+(Alternative Explanations Evaluated:) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 189.5 Td
+(- [fnd-run-deshmukh-discrepancy-1-natren-obs-nat-ren-doc-102a6796-p1-1] Benign OCR misread on scanned document) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 177. Td
+(\(ruled-out\): Ruled out because both layers are clean vector Type1 fonts with an explicit 3 Tr hidden span overlaid by a shifted) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 164.5 Td
+(bold span. — Uncertainty: Requires bank ledger comparison to confirm true disbursed pay.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 152. Td
+(- [fnd-run-deshmukh-discrepancy-1-payslip-math-doc-102a6796] OCR or extraction misread on Net Pay field) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 139.5 Td
+(\(plausible-needs-verification\): If the Net Pay value was misread or overwritten on the PDF layer, correcting the field to the) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 127. Td
+(verified value resolves the arithmetic check. — Uncertainty: Check visual and bank records before editing.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 114.5 Td
+(- [fnd-run-deshmukh-discrepancy-1-bank-mismatch-doc-102a6796] Delayed or split second tranche outside statement) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 102. Td
+(\(ruled-out\): Bank statement covers full month \(2026-08-01 to 2026-08-31\) with closing balance reconciled; no second payroll) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 89.5 Td
+(tranche present. — Uncertainty: None within submitted statement period.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 77. Td
+(- [fnd-run-deshmukh-discrepancy-1-bank-mismatch-doc-102a6796] Stated Net Pay field requires reviewer correction) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 64.5 Td
+(\(plausible-needs-verification\): If the visible payslip Net Pay figure was altered or mis-extracted, correcting it to the verified) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 7855
+>>
+stream
+0.200025 w
+0.8 0.84 0.88 RG
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 740. Td
+(value resolves the discrepancy. — Uncertainty: Requires reviewer inspection of source crop.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 727.5 Td
+(- [fnd-run-deshmukh-discrepancy-1-vis-obs-vis-drift-doc-102a6796-p1-4] Intentional bold total styling vs. post-export text) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 715. Td
+(replacement \(plausible-needs-verification\): Bold styling on a total line can occur in benign templates, unless accompanied by) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 702.5 Td
+(baseline shift and conflicting hidden text. — Uncertainty: Must be weighed alongside CHK-02 and CHK-05.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 686. Td
+(Scoped Negative Evidence:) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 673.5 Td
+(- No incomplete-window negative searches recorded in this run.) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 651. Td
+(4. Visual & Text-Layer Forensic Findings) Tj
+ET
+0.8 0.84 0.88 RG
+48. 645. m
+564. 645. l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 631. Td
+(Recorded 2 visual/text-layer observation\(s\). Note: Trained MobileNetV3 region classifier is not attached in this runtime; findings) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 618.5 Td
+(reflect deterministic native PDF property checks and raster signal baselines.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 602. Td
+(• [Salary_Slip_Aug2026_Deshmukh.pdf p.1 [0.34, 0.34]] PDF Text-Layer vs. Visible Render Cross-Check \(text-layer-diff-v1.2\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 589.5 Td
+(— Native hidden span: "INR 68,000.00" vs. Visible rendered text: "INR 1,12,000.00" \(Signal: 0.94\) | Limits: Neither the hidden) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 577. Td
+(PDF text span nor the visible rendered text is automatically ground truth; requires independent cross-document verification.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 564.5 Td
+(• [Salary_Slip_Aug2026_Deshmukh.pdf p.1 [0.34, 0.34]] Native Typography & Baseline Consistency Inspector) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 552. Td
+(\(font-baseline-v1.1\) — Font sans-serif \(11.5pt\), baseline delta 3.1pt on "INR 1,12,000.00" \(Signal: 0.92\) | Limits: Typography) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 539.5 Td
+(or baseline variation alone is not proof of tampering \(e.g. emphasis styling or export quirks\); must be evaluated alongside) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 527. Td
+(contextual and text-layer checks.) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 504.5 Td
+(5. Evidence & Traceability Index) Tj
+ET
+0.8 0.84 0.88 RG
+48. 498.5 m
+564. 498.5 l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 484.5 Td
+(Traceability index linking 3 provenance assertion\(s\), 0 bounded agent trace\(s\), and 0 reviewer action\(s\).) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 468. Td
+(• Provenance: Loan_Application_Deshmukh.pdf <-> Salary_Slip_Aug2026_Deshmukh.pdf: unknown — Distinct file SHA-256) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 455.5 Td
+(hashes and distinct PDF producers; no external acquisition chain record attached.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 443. Td
+(• Provenance: Loan_Application_Deshmukh.pdf <-> HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown — Distinct) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 430.5 Td
+(file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 418. Td
+(• Provenance: Salary_Slip_Aug2026_Deshmukh.pdf <-> HDFC_Bank_Statement_Aug2026_Deshmukh.pdf: unknown —) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 405.5 Td
+(Distinct file SHA-256 hashes and distinct PDF producers; no external acquisition chain record attached.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 393. Td
+(• Bounded Agent Trace: No bounded agent follow-up runs executed on this snapshot yet.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+56. 380.5 Td
+(• Reviewer Action: No manual reviewer dispositions or corrections recorded yet.) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 358. Td
+(6. Investigation Summary, Coverage & Limitations) Tj
+ET
+0.8 0.84 0.88 RG
+48. 352. m
+564. 352. l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 338. Td
+(Summary of 4 finding\(s\): 3 discrepancy, 1 possible-explanation, 0 insufficient-evidence, 0 consistent-within-check.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 321.5 Td
+(Coverage Matrix: CHK-01: applicable/completed -> consistent-within-check | CHK-02: applicable/completed) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 309. Td
+(-> discrepancy | CHK-03: applicable/completed -> discrepancy | CHK-04: applicable/completed ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 296.5 Td
+(consistent-within-check | CHK-05: applicable/completed -> discrepancy | CHK-06: applicable/completed ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 284. Td
+(possible-explanation | CHK-07: applicable/completed -> consistent-within-check) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 267.5 Td
+(Uninspected Regions:) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 255. Td
+(- Loan_Application_Deshmukh.pdf p.1 [0.05, 0.94, 0.90, 0.04]: Running page footer margin excluded from financial/claim) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 242.5 Td
+(field extraction) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 230. Td
+(- Salary_Slip_Aug2026_Deshmukh.pdf p.1 [0.05, 0.94, 0.90, 0.04]: Running page footer margin excluded from financial/claim) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 217.5 Td
+(field extraction) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 205. Td
+(- HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 [0.05, 0.94, 0.90, 0.04]: Running page footer margin excluded from) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 192.5 Td
+(financial/claim field extraction) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 176. Td
+(Explicit Investigation Boundaries & Non-Certification Notice:) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 163.5 Td
+(- ProofLens is an evidence-driven investigation workspace; it does not certify document authenticity, establish legal fraud, or) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 151. Td
+(contact external issuers.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 138.5 Td
+(- SHA-256 digests validate post-ingestion byte integrity only.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 126. Td
+(- A green completed check indicates consistency within its stated parameters and submitted pages, never blanket) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 113.5 Td
+(authenticity.) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 91. Td
+(7. Validated Findings & Dispositions Register \(4 Exported\)) Tj
+ET
+0.8 0.84 0.88 RG
+48. 85. m
+564. 85. l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 71. Td
+(Summary: 4 of 4 finding\(s\) included \(0 reviewer-validated, 0 system-consistent, 3 discrepancy, 1 possible-explanation, 0) Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 10 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 7881
+>>
+stream
+0.200025 w
+0.8 0.84 0.88 RG
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 740. Td
+(insufficient-evidence\).) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 723.5 Td
+(• [fnd-run-deshmukh-discrepancy-1-natren-obs-nat-ren-doc-102a6796-p1-1 |) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 711. Td
+(chk-run-deshmukh-discrepancy-1-02] Native PDF Text vs. Visible Render Disagreement) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 698.5 Td
+(\(Salary_Slip_Aug2026_Deshmukh.pdf\) — Outcome: DISCREPANCY | Validation: open-unreviewed | Disposition:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 686. Td
+(open) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 673.5 Td
+(  Summary: Visible rendered region shows "INR 1,12,000.00" while underlying PDF native text stream contains "INR) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 661. Td
+(68,000.00".) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 648.5 Td
+(  Uncertainty: Text-layer disagreement shows two conflicting representations in the same PDF coordinate region; neither) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 636. Td
+(branch alone proves which figure reflects actual payroll.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 623.5 Td
+(  Source Evidence Coordinates: Salary_Slip_Aug2026_Deshmukh.pdf p.1 \(Primary Source Region\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 608. Td
+(• [fnd-run-deshmukh-discrepancy-1-payslip-math-doc-102a6796 | chk-run-deshmukh-discrepancy-1-03] Payslip) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 595.5 Td
+(Internal Arithmetic Discrepancy \(Salary_Slip_Aug2026_Deshmukh.pdf\) — Outcome: DISCREPANCY | Validation:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 583. Td
+(open-unreviewed | Disposition: open) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 570.5 Td
+(  Summary: Stated Net Pay \(INR 1,12,000.00\) differs by +INR 44,000.00 from Gross Pay \(INR 85,000.00\) minus Deductions) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 558. Td
+(\(INR 17,000.00\) = INR 68,000.00.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 545.5 Td
+(  Uncertainty: Arithmetic discrepancy indicates either an altered Net Pay figure, an unitemized allowance/bonus omitted from) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 533. Td
+(the payslip table, or an OCR/extraction error.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 520.5 Td
+(  Source Evidence Coordinates: Salary_Slip_Aug2026_Deshmukh.pdf p.1 \(Primary Source Region\);) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 508. Td
+(Salary_Slip_Aug2026_Deshmukh.pdf p.1 \(Secondary Compare Region\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 492.5 Td
+(• [fnd-run-deshmukh-discrepancy-1-bank-mismatch-doc-102a6796 | chk-run-deshmukh-discrepancy-1-05]) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 480. Td
+(Payslip Net Pay Disagrees with Bank Payroll Deposit \(2026-08\) — Outcome: DISCREPANCY | Validation:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 467.5 Td
+(open-unreviewed | Disposition: open) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 455. Td
+(  Summary: Payslip states Net Pay INR 1,12,000.00, whereas the covering bank statement shows an employer payroll credit) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 442.5 Td
+(of INR 68,000.00 on 2026-08-31 \(delta -INR 44,000.00\).) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 430. Td
+(  Uncertainty: Cross-document discrepancy identifies an unexplained gap between stated payslip net pay and deposited) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 417.5 Td
+(bank credit. Check native text layer and visual observations before concluding.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 405. Td
+(  Source Evidence Coordinates: Salary_Slip_Aug2026_Deshmukh.pdf p.1 \(Primary Source Region\);) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 392.5 Td
+(HDFC_Bank_Statement_Aug2026_Deshmukh.pdf p.1 \(Secondary Compare Region\)) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 377. Td
+(• [fnd-run-deshmukh-discrepancy-1-vis-obs-vis-drift-doc-102a6796-p1-4 |) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 364.5 Td
+(chk-run-deshmukh-discrepancy-1-06] Visual Typography & Baseline Drift Observed) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 352. Td
+(\(Salary_Slip_Aug2026_Deshmukh.pdf\) — Outcome: POSSIBLE-EXPLANATION | Validation: open-unreviewed |) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 339.5 Td
+(Disposition: open) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 327. Td
+(  Summary: Font sans-serif \(11.5pt\), baseline delta 3.1pt on "INR 1,12,000.00". Baseline: Sibling value rows use monospace) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 314.5 Td
+(\(10pt\) with median baseline delta 0.0pt.) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 302. Td
+(  Uncertainty: Typography or baseline variation alone is not proof of tampering \(e.g. emphasis styling or export quirks\); must) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+58. 289.5 Td
+(be evaluated alongside contextual and text-layer checks.) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 277. Td
+(  Source Evidence Coordinates: Salary_Slip_Aug2026_Deshmukh.pdf p.1 \(Primary Source Region\);) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 264.5 Td
+(Salary_Slip_Aug2026_Deshmukh.pdf p.1 \(Secondary Compare Region\)) Tj
+ET
+BT
+/F2 11.5 Tf
+13.2249999999999996 TL
+0.059 0.09 0.165 rg
+48. 239. Td
+(8. Full Cryptographic Audit History & SHA-256 Chain \(6 Events\)) Tj
+ET
+0.8 0.84 0.88 RG
+48. 233. m
+564. 233. l
+S
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 219. Td
+(Integrity Status: verified-against-checkpoint | Checked Events: 6 | Latest Sequence: #6 | Verified At: 2026-11-09T05:53:49.445Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 206.5 Td
+(Head Event SHA-256: 5e8f5c165da8208391df823621eb0423e92ff93f2601bc01f3812c4a4432a290) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+52. 194. Td
+(Retained Checkpoint Anchor: seq #5 | Head=4e0b9af89f5217b9a132a047... \(2026-11-09T05:53:04.965Z\)) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 177.5 Td
+(Original Document Byte SHA-256 Verification:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 165. Td
+(- Loan_Application_Deshmukh.pdf \(doc-956bf855\): MATCH | Expected=530e9be739a71413cf8d... |) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 152.5 Td
+(Actual=530e9be739a71413cf8d...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 140. Td
+(- Salary_Slip_Aug2026_Deshmukh.pdf \(doc-102a6796\): MATCH | Expected=2378a9fc76f154a52532... |) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 127.5 Td
+(Actual=2378a9fc76f154a52532...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 115. Td
+(- HDFC_Bank_Statement_Aug2026_Deshmukh.pdf \(doc-8f9bec31\): MATCH | Expected=4343bd0f1af82a8ec2c5... |) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 102.5 Td
+(Actual=4343bd0f1af82a8ec2c5...) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 86. Td
+(Field Revision History \(19 record\(s\)\):) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 73.5 Td
+(- [rev #1 on fld-doc-956bf855-application_reference-p1-1] "APP-IND-2026-019" -> "APP-IND-2026-019" by) Tj
+ET
+endstream
+endobj
+11 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 12 0 R
+>>
+endobj
+12 0 obj
+<<
+/Length 8452
+>>
+stream
+0.200025 w
+0.8 0.84 0.88 RG
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 740. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 727.5 Td
+(- [rev #1 on fld-doc-956bf855-applicant_name-p1-2] "Vikram Deshmukh" -> "Vikram Deshmukh" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 715. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 702.5 Td
+(- [rev #1 on fld-doc-956bf855-employer_name-p1-3] "Bharat Freight Logistics Pvt. Ltd." -> "Bharat) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 690. Td
+(Freight Logistics Pvt. Ltd." by extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 677.5 Td
+(2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 665. Td
+(- [rev #1 on fld-doc-956bf855-declared_gross_income-p1-4] "INR 1,40,000.00" -> "INR 1,40,000.00" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 652.5 Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 640. Td
+(- [rev #1 on fld-doc-956bf855-declared_net_income-p1-5] "INR 1,12,000.00" -> "INR 1,12,000.00" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 627.5 Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 615. Td
+(- [rev #1 on fld-doc-956bf855-pay_period-p1-6] "2026-08 \(Monthly\)" -> "2026-08 \(Monthly\)" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 602.5 Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 590. Td
+(- [rev #1 on fld-doc-102a6796-applicant_name-p1-1] "Vikram Deshmukh" -> "Vikram Deshmukh" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 577.5 Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 565. Td
+(- [rev #1 on fld-doc-102a6796-employer_name-p1-2] "Bharat Freight Logistics Pvt. Ltd." -> "Bharat) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 552.5 Td
+(Freight Logistics Pvt. Ltd." by extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 540. Td
+(2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 527.5 Td
+(- [rev #1 on fld-doc-102a6796-pay_period-p1-3] "2026-08" -> "2026-08" by extractor-pipeline \(Initial) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 515. Td
+(extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 502.5 Td
+(- [rev #1 on fld-doc-102a6796-pay_date-p1-4] "2026-08-31" -> "2026-08-31" by extractor-pipeline) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 490. Td
+(\(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 477.5 Td
+(- [rev #1 on fld-doc-102a6796-gross_pay-p1-5] "INR 85,000.00" -> "INR 85,000.00" by extractor-pipeline) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 465. Td
+(\(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 452.5 Td
+(- [rev #1 on fld-doc-102a6796-deductions-p1-6] "INR 17,000.00" -> "INR 17,000.00" by extractor-pipeline) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 440. Td
+(\(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 427.5 Td
+(- [rev #1 on fld-doc-102a6796-net_pay-p1-7] "INR 1,12,000.00" -> "INR 1,12,000.00" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 415. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 402.5 Td
+(- [rev #1 on fld-doc-8f9bec31-pageind-p1] "Page 1 of 1" -> "Page 1 of 1" by extractor-pipeline \(Initial) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 390. Td
+(extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 377.5 Td
+(- [rev #1 on fld-doc-8f9bec31-applicant_name-p1-2] "Vikram Deshmukh" -> "Vikram Deshmukh" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 365. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 352.5 Td
+(- [rev #1 on fld-doc-8f9bec31-account_number-p1-3] "HDFC-005520914" -> "HDFC-005520914" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 340. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 327.5 Td
+(- [rev #1 on fld-doc-8f9bec31-statement_period-p1-4] "2026-08-01 to 2026-08-31" -> "2026-08-01 to) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 315. Td
+(2026-08-31" by extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 302.5 Td
+(- [rev #1 on fld-doc-8f9bec31-opening_balance-p1-5] "INR 94,500.00" -> "INR 94,500.00" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 290. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 277.5 Td
+(- [rev #1 on fld-doc-8f9bec31-closing_balance-p1-6] "INR 1,31,500.00" -> "INR 1,31,500.00" by) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+56. 265. Td
+(extractor-pipeline \(Initial extraction \(pdfjs-kv-v2.1\)\) at 2026-11-09T05:53:04.918Z) Tj
+ET
+BT
+/F1 9.2 Tf
+10.5799999999999983 TL
+0.2 0.255 0.333 rg
+48. 248.5 Td
+(Chronological Hash-Linked Audit Event Chain:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 236. Td
+(#1 [2026-11-09T05:53:04.881Z] CASE_CREATED by system-bootstrap | prev=000000000000... ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 223.5 Td
+(hash=3ac1283153d1fb7f...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 211. Td
+(   payload: {"applicantName":"Vikram Deshmukh","referenceCode":"APP-IND-2026-019","title":"Altered) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 198.5 Td
+(Salary & Native/Rendered Disagreement — Vikram Deshmukh"}) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 186. Td
+(#2 [2026-11-09T05:53:04.893Z] DOCUMENT_INGESTED by system-bootstrap | prev=3ac1283153d1... ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 173.5 Td
+(hash=fdb540519c211ecd...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 161. Td
+(   payload: {"displayName":"Loan_Application_Deshmukh.pdf","docClass":"application","documentId":"doc-) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 148.5 Td
+(956bf855","sha256":"530e9be739a71413cf8d43f5f855ec31178f34bc17d370d071bf5a862e628fb2","status":"parsed) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 136. Td
+("}) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 123.5 Td
+(#3 [2026-11-09T05:53:04.901Z] DOCUMENT_INGESTED by system-bootstrap | prev=fdb540519c21... ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 111. Td
+(hash=8062b3b8ed69b0e5...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 98.5 Td
+(   payload: {"displayName":"Salary_Slip_Aug2026_Deshmukh.pdf","docClass":"salary-slip","documentId":"d) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 86. Td
+(oc-102a6796","sha256":"2378a9fc76f154a525325dfca72c886b6a1f4872313255407338b4afeb0c253d","status":"par) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 73.5 Td
+(sed"}) Tj
+ET
+endstream
+endobj
+13 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612. 792.]
+/Contents 14 0 R
+>>
+endobj
+14 0 obj
+<<
+/Length 1879
+>>
+stream
+0.200025 w
+0.8 0.84 0.88 RG
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 740. Td
+(#4 [2026-11-09T05:53:04.915Z] DOCUMENT_INGESTED by system-bootstrap | prev=8062b3b8ed69... ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 727.5 Td
+(hash=0a68216125cf403c...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 715. Td
+(   payload: {"displayName":"HDFC_Bank_Statement_Aug2026_Deshmukh.pdf","docClass":"bank-statement","doc) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 702.5 Td
+(umentId":"doc-8f9bec31","sha256":"4343bd0f1af82a8ec2c59344ff830591ba5b9855b14e5bd0b43585c7588b917b","s) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 690. Td
+(tatus":"parsed"}) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 677.5 Td
+(#5 [2026-11-09T05:53:04.961Z] RUN_COMPLETED by system-bootstrap | prev=0a68216125cf... ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 665. Td
+(hash=4e0b9af89f5217b9...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 652.5 Td
+(   payload:) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 640. Td
+({"findingsCount":4,"revisionFingerprint":"2441ba36b8c15003","runNumber":1,"status":"complete"}) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 627.5 Td
+(#6 [2026-11-09T05:53:04.970Z] REPORT_GENERATED by system-bootstrap | prev=4e0b9af89f52... ->) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+54. 615. Td
+(hash=5e8f5c165da82083...) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 602.5 Td
+(   payload: {"reportHash":"31c40cae1df906ba3ff2681582e4ff91518d5c2adf176991fa6affd88fce776e","reportId) Tj
+ET
+BT
+/F5 8.2 Tf
+9.4299999999999979 TL
+0.2 0.255 0.333 rg
+58. 590. Td
+(":"rep-run-deshmukh-discrepancy-1-mw8uhmfe","revisionFingerprint":"2441ba36b8c15003"}) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R ]
+/Count 6
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+21 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+22 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+23 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+24 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+25 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+26 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+27 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+28 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 15 0 R
+/F2 16 0 R
+/F3 17 0 R
+/F4 18 0 R
+/F5 19 0 R
+/F6 20 0 R
+/F7 21 0 R
+/F8 22 0 R
+/F9 23 0 R
+/F10 24 0 R
+/F11 25 0 R
+/F12 26 0 R
+/F13 27 0 R
+/F14 28 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+29 0 obj
+<<
+/Producer (jsPDF 4.2.1)
+/CreationDate (D:20261109055349-00'00')
+>>
+endobj
+30 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 31
+0000000000 65535 f 
+0000043181 00000 n 
+0000045035 00000 n 
+0000000015 00000 n 
+0000000120 00000 n 
+0000007991 00000 n 
+0000008096 00000 n 
+0000016478 00000 n 
+0000016583 00000 n 
+0000024490 00000 n 
+0000024596 00000 n 
+0000032530 00000 n 
+0000032637 00000 n 
+0000041142 00000 n 
+0000041249 00000 n 
+0000043270 00000 n 
+0000043396 00000 n 
+0000043527 00000 n 
+0000043661 00000 n 
+0000043799 00000 n 
+0000043923 00000 n 
+0000044052 00000 n 
+0000044184 00000 n 
+0000044320 00000 n 
+0000044448 00000 n 
+0000044575 00000 n 
+0000044704 00000 n 
+0000044837 00000 n 
+0000044939 00000 n 
+0000045288 00000 n 
+0000045374 00000 n 
+trailer
+<<
+/Size 31
+/Root 30 0 R
+/Info 29 0 R
+/ID [ <7CF6F0D3C0D76FC46209C2683A654144> <7CF6F0D3C0D76FC46209C2683A654144> ]
+>>
+startxref
+45478
+%%EOF
